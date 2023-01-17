@@ -1,6 +1,16 @@
-import '@/styles/globals.css'
+import { Layout } from '@/components/Layout'
+import '@/styles/index.css'
+import { setDarkMode } from '@/utils/darkMode';
 import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  setDarkMode();
+   
+  return (
+    <>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
+  )
 }
