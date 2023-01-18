@@ -1,9 +1,12 @@
 import Link from "next/link";
 import * as Switch from '@radix-ui/react-switch';
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export function Navbar() {
     const [darkMode, setDarkModeChecked] = useState(false);
+    const router = useRouter();
+    const currentRoute = router.pathname;
 
     function setDarkModeAtPage(checked: boolean) {
         // const isDarkMode = document.documentElement.classList.contains("dark");
@@ -48,10 +51,10 @@ export function Navbar() {
             </div>
 
             <div id="navbar-menu" className="hidden mt-12 text-zinc-500 dark:text-zinc-100 uppercase laptop:flex laptop:flex-col laptop:items-center laptop:space-y-1">
-                <Link className="hover:text-amber-400" href="/" passHref>Home</Link>
-                <Link className="hover:text-amber-400" href="/about">About</Link>
-                <Link className="hover:text-amber-400" href="/contact">Contact</Link>
-                <Link className="hover:text-amber-400" href="/blog">Blog</Link>
+                <Link className={`hover:text-amber-400 ${currentRoute === "/" && "text-amber-400"}`} href="/" passHref>Home</Link>
+                <Link className={`hover:text-amber-400 ${currentRoute === "/about" && "text-amber-400"}`} href="/about">About</Link>
+                <Link className={`hover:text-amber-400 ${currentRoute === "/contact" && "text-amber-400"}`} href="/contact">Contact</Link>
+                <Link className={`hover:text-amber-400 ${currentRoute === "/blog" && "text-amber-400"}`} href="/blog">Blog</Link>
             </div>
 
             <Switch.Root className="SwitchRoot hidden laptop:block" id="dark-mode" checked={darkMode} onCheckedChange={ () => setDarkModeAtPage(darkMode) }>

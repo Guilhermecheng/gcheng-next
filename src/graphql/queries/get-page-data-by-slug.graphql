@@ -1,0 +1,13 @@
+query MyQuery {
+    webText(where: {slug: "guilherme-intro"}) {
+    id
+    createdAt
+    title
+    subtitle
+    updatedAt
+    slug
+    content {
+        json
+    }
+    }
+}
