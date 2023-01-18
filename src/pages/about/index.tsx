@@ -10,7 +10,7 @@ export default function About({data}: any) {
             <Head>
                 <title>About | Guilherme Cheng</title>
             </Head>
-            <div className="text-zinc-400 dark:text-zinc-300 text-base laptop:text-lg w-full flex flex-col  pt-4 laptop:pt-12 laptop:h-screen">
+            <div className="text-zinc-400 dark:text-zinc-300 text-base laptop:text-lg w-full flex flex-col pt-4 laptop:pt-12 laptop:h-screen">
                 <PageTitle 
                     title={`Guilherme Cheng`}
                     subtitle={`Yeah, this is kinda my resumé =)`}
