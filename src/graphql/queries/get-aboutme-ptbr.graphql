@@ -1,0 +1,14 @@
+query QueryAboutMePTBR {
+  webText(where: {slug: "guilherme-about-pt-BR"} stage: PUBLISHED){
+    createdAt
+    id
+    publishedAt
+    slug
+    subtitle
+    title
+    updatedAt
+    content {
+        json
+    }
+  }
+}

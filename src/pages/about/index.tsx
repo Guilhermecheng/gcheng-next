@@ -1,7 +1,9 @@
-import { PageTitle } from "@/components/PageTitle";
+import Head from "next/head";
+
 import client from "@/services/apolloClient";
 import { gql } from "@apollo/client";
-import Head from "next/head";
+
+import { PageTitle } from "@/components/PageTitle";
 
 export default function About({data}: any) {
     console.log(data)
@@ -12,12 +14,11 @@ export default function About({data}: any) {
             </Head>
             <div className="text-zinc-400 dark:text-white text-base laptop:text-lg w-full flex flex-col pt-4 laptop:pt-12 laptop:h-screen">
                 <PageTitle 
-                    title={`Guilherme Cheng`}
-                    subtitle={`Yeah, this is kinda my resumé =)`}
+                    title={data.webText.title}
+                    subtitle={data.webText.subtitle}
                 />
 
                 <div id="about-content" className="mt-6 laptop:mt-8 text-zinc-500 dark:text-zinc-200">
-                    <p className="font-semibold">{data.webText.title}</p>
 
                     {data.webText.content.json.children.map((contentSlice: any, i: number) => {
                         switch(contentSlice) {
@@ -49,19 +50,20 @@ export async function getStaticProps() {
     try {
         const {data} = await client.query({
             query: gql `
-                query MyQuery {
-                    webText(where: {slug: "guilherme-intro"}) {
-                    id
-                    createdAt
-                    title
-                    subtitle
-                    updatedAt
-                    slug
-                    content {
+                query QueryAboutMePTBR {
+                    webText(where: {slug: "guilherme-about-pt-BR"} stage: PUBLISHED){
+                        createdAt
+                        id
+                        publishedAt
+                        slug
+                        subtitle
+                        title
+                        updatedAt
+                        content {
                         json
+                        }
                     }
-                    }
-                }`
+                    }`
         })
     
         console.log(data)
