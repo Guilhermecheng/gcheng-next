@@ -4,9 +4,13 @@ import client from "@/services/apolloClient";
 import { gql } from "@apollo/client";
 
 import { PageTitle } from "@/components/PageTitle";
+import { useContext } from "react";
+import { GlobalContext } from "@/contexts/Contexts";
 
 export default function About({data}: any) {
     console.log(data)
+    const { language } = useContext(GlobalContext);
+
     return (
         <>
             <Head>
@@ -47,6 +51,7 @@ export default function About({data}: any) {
 }
 
 export async function getStaticProps() {
+
     try {
         const {data} = await client.query({
             query: gql `
@@ -63,7 +68,7 @@ export async function getStaticProps() {
                         json
                         }
                     }
-                    }`
+                }`
         })
     
         console.log(data)
