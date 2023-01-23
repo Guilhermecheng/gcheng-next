@@ -4,17 +4,19 @@ import { useRouter } from "next/router";
 import { gql } from "@apollo/client";
 import client from "@/services/apolloClient";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 
 import * as Switch from '@radix-ui/react-switch';
+import { GlobalContext } from "@/contexts/Contexts";
 
 interface PageProps {
     id: string;
     href: string;
-    text: string;
+    textEN: string;
+    textPTBR: string;
 }
 
 interface PhraseProps {
@@ -23,7 +25,8 @@ interface PhraseProps {
 }
 
 export function Navbar() {
-    const [darkMode, setDarkModeChecked] = useState(false);
+    const { language, setLanguage, darkModeChecked, setDarkModeChecked } = useContext(GlobalContext);
+    
     const [phrase, setPhrase] = useState<PhraseProps>();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -81,22 +84,26 @@ export function Navbar() {
         {
             id: "home",
             href: "/",
-            text: "Home",
+            textEN: "Home",
+            textPTBR: "Home",
         },
         {
             id: "about",
             href: "/about",
-            text: "About",
+            textEN: "About",
+            textPTBR: "Sobre",
         },
         {
             id: "contact",
             href: "/contact",
-            text: "Contact",
+            textEN: "Contact",
+            textPTBR: "Contato",
         },
         {
             id: "blog",
             href: "/blog",
-            text: "Blog",
+            textEN: "Blog",
+            textPTBR: "Blog",
         },
     ]
 
@@ -131,15 +138,23 @@ export function Navbar() {
                 { pages.map((page: PageProps) => {
                     return (
                         <Link key={page.id} className={`hover:text-amber-400 ${currentRoute === page.href && "text-amber-400"}`} href={page.href} passHref>
-                            { page.text }
+                            { language === "ptBR" ? page.textPTBR : page.textEN }
                         </Link>
                     )
                 }) }
             </div>
 
-            <Switch.Root className="SwitchRoot hidden laptop:block" id="dark-mode" checked={darkMode} onCheckedChange={ () => setDarkModeAtPage(darkMode) }>
+            <Switch.Root className="SwitchRoot hidden laptop:block" id="dark-mode" checked={darkModeChecked} onCheckedChange={ () => setDarkModeAtPage(darkModeChecked) }>
                 <Switch.Thumb className="SwitchThumb" />
             </Switch.Root>
+
+            <div id="language" className="absolute bottom-8 hidden laptop:block text-zinc-500 dark:text-zinc-100">
+                <span>Language: <span>{ language === "ptBR" ? (
+                    <span className="cursor-pointer hover:underline hover:underline-offset-1" onClick={() => setLanguage("EN")}>BR</span>
+                ) : (
+                    <span className="cursor-pointer hover:underline hover:underline-offset-1" onClick={() => setLanguage("ptBR")}>EN</span>
+                ) }</span></span>
+            </div>
         </div>
     )
 }

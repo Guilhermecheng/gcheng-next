@@ -6,7 +6,7 @@ export default function Home() {
       <Head>
         <title>Guilherme Cheng | Home</title>
       </Head>
-      <div className="text-amber-400 dark:text-white w-full flex flex-col items-center justify-center pt-4 laptop:h-screen">
+      <div className="text-zinc-500 dark:text-white w-full flex flex-col items-center justify-center pt-4 laptop:h-screen">
 
         <div className="w-full">
           <h3 className="text-lg laptop:text-xl mb-1 laptop:mb-2">Olá! Seja bem vindo!</h3>
