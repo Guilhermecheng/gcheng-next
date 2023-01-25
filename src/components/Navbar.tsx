@@ -60,7 +60,7 @@ export function Navbar() {
 
     useEffect(() => {
         setIsMobileMenuOpen(false);
-    }, [router.asPath])
+    }, [router.asPath, language, darkModeChecked])
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
