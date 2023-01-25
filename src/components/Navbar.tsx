@@ -58,6 +58,18 @@ export function Navbar() {
         }
     }, [])
 
+    useEffect(() => {
+        setIsMobileMenuOpen(false);
+    }, [router.asPath])
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            if(document.documentElement.classList.contains("dark")) {
+                setDarkModeChecked(true);
+            }
+        }
+    }, [])
+
     function setDarkModeAtPage(checked: boolean) {
         // const isDarkMode = document.documentElement.classList.contains("dark");
         if(checked) {
@@ -71,14 +83,6 @@ export function Navbar() {
             localStorage.setItem('theme', "dark");
         }
     }
-
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            if(document.documentElement.classList.contains("dark")) {
-                setDarkModeChecked(true);
-            }
-        }
-    }, [])
 
     const pages = [
         {
@@ -109,8 +113,8 @@ export function Navbar() {
 
     return (
         <>
-            <div className={`${ isMobileMenuOpen ? "block" : "hidden" } absolute z-20 bg-zinc-100 dark:bg-zinc-900 w-screen h-[100%] flex flex-col items-center text-center`}>
-                    <div className="nlock h-40"></div>
+            <div className={`${ isMobileMenuOpen ? "h-[100%]" : "h-0" } absolute z-20 bg-zinc-100 dark:bg-zinc-900 w-screen truncate flex flex-col items-center text-center ease-in-out duration-500`}>
+                    <div className="block h-40"></div>
                     <ul className="mt-50">
                         { pages.map((page: PageProps) => {
                             return (
@@ -141,16 +145,18 @@ export function Navbar() {
                     { isMobileMenuOpen ? <IoMdClose size={40} onClick={() => setIsMobileMenuOpen(false)} /> : <HiMenuAlt1 size={40} onClick={() => setIsMobileMenuOpen(true)} /> }
                 </div>
 
-                <div className="flex flex-row items-center justify-center mt-6 laptop:mt-0">
-                    <div className='w-32'>
-                        <img src="https://github.com/Guilhermecheng.png"  alt="Guilherme's GitHub profile picture" className='rounded-full object-center border-4 border-amber-400' />
-                    </div>
+                <Link href="/">
+                    <div className="flex flex-row items-center justify-center mt-6 laptop:mt-0">
+                        <div className='w-32 cursor-pointer'>
+                            <img src="https://github.com/Guilhermecheng.png"  alt="Guilherme's GitHub profile picture" className='rounded-full object-center border-4 border-amber-400' />
+                        </div>
 
-                    <div className='ml-4'>
-                        <h1 className="text-zinc-800 dark:text-zinc-100 text-xl font-bold laptop:text-3xl">Guilherme Cheng</h1>
-                        <h3 className="text-zinc-500 dark:text-zinc-300 text-sm laptop:text-lg">front end dev, mechanical engineer </h3>
+                        <div className='ml-4'>
+                            <h1 className="text-zinc-800 dark:text-zinc-100 text-xl font-bold laptop:text-3xl">Guilherme Cheng</h1>
+                            <h3 className="text-zinc-500 dark:text-zinc-300 text-sm laptop:text-lg">front end dev, mechanical engineer </h3>
+                        </div>
                     </div>
-                </div>
+                </Link>
 
                 <div id="inspirational-phrase" className="mt-6 pb-6 laptop:pb-0 laptop:mt-12 text-zinc-500 dark:text-zinc-300 relative">
                     <p className="italic">
