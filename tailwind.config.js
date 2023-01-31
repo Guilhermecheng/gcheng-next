@@ -10,7 +10,12 @@ module.exports = {
       'tablet': '640px',
       'laptop': '1024px',
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'dark-background':'url(/background_dark.png)',
+        'white-background':'url(/background_white.png)',
+      }
+    },
   },
   plugins: [],
 }

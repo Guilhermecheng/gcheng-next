@@ -7,29 +7,44 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
 import { RiFilePaperFill } from "react-icons/ri";
 
+const contactMedias = [
+    {
+        name: "Github",
+        link: "https://github.com/Guilhermecheng",
+        logo: <FaGithub size={40} />,
+    },
+    {
+        name: "Linkedin",
+        link: "https://www.linkedin.com/in/guilherme-cheng/",
+        logo: <FaLinkedin size={40} />,
+    },
+    {
+        name: "Instagram",
+        link: "https://instagram.com/guilhermecheng/",
+        logo: <BsInstagram size={40} />,
+    },
+    {
+        name: "Resumé",
+        link: "https://guilhermecheng.notion.site/CV-Guilherme-Ferreira-Cheng-eefed60dfd0941e8899c75d182551acd/",
+        logo: <RiFilePaperFill size={40} />,
+    },
+]
+
+const contactPageContent = {
+    ptBR: {
+        title: "Entre em contato",
+        subtitle: "ainda estou pensando no subtitulo",
+        pageEntrance: "OI",
+    },
+    en: {
+        title: "Contact me",
+        subtitle: "Let's have a coffee!  ☕️ ",
+        pageEntrance: "tchau",
+    },
+}
+
 export default function Contact() {
-    const contactMedias = [
-        {
-            name: "Github",
-            link: "https://github.com/Guilhermecheng",
-            logo: <FaGithub size={40} />,
-        },
-        {
-            name: "Linkedin",
-            link: "https://www.linkedin.com/in/guilherme-cheng/",
-            logo: <FaLinkedin size={40} />,
-        },
-        {
-            name: "Instagram",
-            link: "https://instagram.com/guilhermecheng/",
-            logo: <BsInstagram size={40} />,
-        },
-        {
-            name: "Resumé",
-            link: "https://guilhermecheng.notion.site/CV-Guilherme-Ferreira-Cheng-eefed60dfd0941e8899c75d182551acd/",
-            logo: <RiFilePaperFill size={40} />,
-        },
-    ]
+    
 
     return (
         <>
@@ -37,7 +52,7 @@ export default function Contact() {
                 <title>Contato | Guilherme Cheng</title>
             </Head>
             
-            <div className="text-zinc-400 dark:text-white w-full flex flex-col text-base laptop:text-lg pt-4 laptop:pt-12 laptop:h-screen">
+            <div className="text-zinc-400 dark:text-white w-full flex flex-col text-base laptop:text-lg laptop:h-screen">
                 <PageTitle 
                     title={`Contact me`}
                     subtitle={`Let's have a coffee!  ☕️ `}

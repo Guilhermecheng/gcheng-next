@@ -91,11 +91,17 @@ export function Navbar() {
             textEN: "Home",
             textPTBR: "Home",
         },
+        // {
+        //     id: "about",
+        //     href: "/about",
+        //     textEN: "About",
+        //     textPTBR: "Sobre",
+        // },
         {
-            id: "about",
-            href: "/about",
-            textEN: "About",
-            textPTBR: "Sobre",
+            id: "skills",
+            href: "/skills",
+            textEN: "Skills / Exp",
+            textPTBR: "Skills",
         },
         {
             id: "contact",
@@ -114,31 +120,32 @@ export function Navbar() {
     return (
         <>
             <div className={`${ isMobileMenuOpen ? "h-[100%]" : "h-0" } absolute z-20 bg-zinc-100 dark:bg-zinc-900 w-screen truncate flex flex-col items-center text-center ease-in-out duration-500`}>
-                    <div className="block h-40"></div>
-                    <ul className="mt-50">
-                        { pages.map((page: PageProps) => {
-                            return (
-                                <li key={page.id} className="text-zinc-500 dark:text-zinc-100 text-xl uppercase mb-2">
-                                    <Link  className={`hover:text-amber-400 ${currentRoute === page.href && "text-amber-400"}`} href={page.href} passHref>
-                                        { language === "ptBR" ? page.textPTBR : page.textEN }
-                                    </Link>
-                                </li>
-                            )
-                        }) }
-                    </ul>
-                    <Switch.Root className="SwitchRoot mb-2" id="dark-mode" checked={darkModeChecked} onCheckedChange={ () => setDarkModeAtPage(darkModeChecked) }>
-                        <Switch.Thumb className="SwitchThumb" />
-                    </Switch.Root>
+                <div className="block h-40"></div>
+                <ul className="mt-50">
+                    { pages.map((page: PageProps) => {
+                        return (
+                            <li key={page.id} className="text-zinc-500 dark:text-zinc-100 text-xl uppercase mb-2">
+                                <Link  className={`hover:text-amber-400 ${currentRoute === page.href && "text-amber-400"}`} href={page.href} passHref>
+                                    { language === "ptBR" ? page.textPTBR : page.textEN }
+                                </Link>
+                            </li>
+                        )
+                    }) }
+                </ul>
+                <Switch.Root className="SwitchRoot mb-2" id="dark-mode" checked={darkModeChecked} onCheckedChange={ () => setDarkModeAtPage(darkModeChecked) }>
+                    <Switch.Thumb className="SwitchThumb" />
+                </Switch.Root>
 
-                    <div id="language" className=" text-zinc-500 dark:text-zinc-100">
-                        <span>Language: <span>{ language === "ptBR" ? (
-                            <span className="cursor-pointer text-zinc-800 dark:text-amber-400 hover:underline hover:underline-offset-1" onClick={() => setLanguage("EN")}>BR</span>
-                        ) : (
-                            <span className="cursor-pointer text-zinc-800 dark:text-amber-400 hover:underline hover:underline-offset-1" onClick={() => setLanguage("ptBR")}>EN</span>
-                        ) }</span></span>
-                    </div>
+                <div id="language" className=" text-zinc-500 dark:text-zinc-100">
+                    <span>Language: <span>{ language === "ptBR" ? (
+                        <span className="cursor-pointer text-zinc-800 dark:text-amber-400 hover:underline hover:underline-offset-1" onClick={() => setLanguage("EN")}>BR</span>
+                    ) : (
+                        <span className="cursor-pointer text-zinc-800 dark:text-amber-400 hover:underline hover:underline-offset-1" onClick={() => setLanguage("ptBR")}>EN</span>
+                    ) }</span></span>
                 </div>
-            <div id="sidebar" className='flex flex-col items-center bg-zinc-100 dark:bg-zinc-900 px-4 justify-center h-64 w-full laptop:fixed laptop:w-[40%] laptop:h-screen'>
+            </div>
+
+            <div id="sidebar" className='flex flex-col items-center bg-zinc-200 dark:bg-zinc-900 px-4 justify-center h-64 w-full laptop:fixed laptop:w-[40%] laptop:h-screen'>
                 
 
                 <div id="mobile-menu" className="flex absolute right-4 top-4 z-40 laptop:hidden text-zinc-800 dark:text-amber-400">
