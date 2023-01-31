@@ -5,7 +5,7 @@ export const GlobalContext = createContext<any>(null);
 export const Contexts = (props: any) => {
 
     const [language, setLanguage] = useState("ptBR"); // ptBR or EN
-    const [darkModeChecked, setDarkModeChecked] = useState(false);
+    const [darkModeChecked, setDarkModeChecked] = useState(true);
 
 
     return (

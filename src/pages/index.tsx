@@ -59,7 +59,7 @@ export default function Home() {
                 <li key={i} className="relative flex flex-col w-full max-h-60 rounded-md overflow-hidden hover:border-2 hover:border-amber-400 hover:cursor-pointer group">
                   <Link href={project.link} target="_blank">
                     <img src={project.image} alt={project.imgAlt} className='w-full bg-center bg-no-repeat' />
-                    <div className="absolute bottom-0 w-full h-[20%] bg-zinc-700 opacity-0 group-hover:opacity-70 transition ease-in-out duration-300 z-20">
+                    <div className="absolute bottom-0 w-full h-[20%] bg-zinc-700 opacity-70 laptop:opacity-0 laptop:group-hover:opacity-70 transition ease-in-out duration-300 z-20">
                       <p className="p-2 text-zinc-100">{project.title}</p>
                     </div>
                   </Link>

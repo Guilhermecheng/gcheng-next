@@ -19,7 +19,7 @@ button {
 }
 
 .SwitchRoot[data-state='checked'] {
-  background-color: #a1a1aa;
+  background-color: #FBBF24;
 }
 
 .SwitchThumb {
