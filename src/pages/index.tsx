@@ -19,25 +19,31 @@ export default function Home() {
       </Head>
 
       <div className="text-zinc-500 dark:text-white w-full flex flex-col laptop:h-screen">
-        <div className="w-full">
-          <h1 className="text-zinc-800 dark:text-amber-400 text-2xl laptop:text-4xl">
-            <span className="text-4xl laptop:text-6xl font-semibold">{pageContent.title}</span>
-          </h1>
 
-          <h3 className="text-lg laptop:text-xl pl-1 mb-1 laptop:mb-2">{pageContent.subtitle}</h3>
+        <div id="logo-and-title" className="w-full flex flex-col align-center">
+          <div className="flex w-full justify-center laptop:justify-start">
+            <img src="/logo_dark.svg" alt="" className="w-16 tablet:w-20 laptop:w-32" />
+
+            <div id="page-title-and-subtitle" className="">
+              <h1 className="text-zinc-800 dark:text-amber-400 text-2xl laptop:text-4xl pt-10 laptop:pt-11 pl-1">
+                <span className="text-3xl tablet:text-4xl laptop:text-5xl font-semibold flex items-center">{pageContent.title.substring(1, 1000)}</span>
+              </h1>
+              <h3 className="text-base laptop:text-lg pl-2 pt-2 mb-1 laptop:mb-2">{pageContent.subtitle}</h3>
+            </div>
+          </div>
         </div>
 
-        <section>
+        <section id="page-intro" className="mt-2 laptop:mt-4">
           <h2 className="mt-6 text-zinc-500 dark:text-zinc-200 text-lg font-semibold laptop:text-xl">{pageContent.pageEntrance}</h2>
           <div className="mt-2 text-sm text-zinc-500 dark:text-zinc-200 laptop:text-base">
             { pageContent.description.map((parag, i) => <p key={i}>{ parag }</p>)  }
           </div>
         </section>
           
-        <section >
-          <h1 className="text-xl laptop:text-2xl mt-8 text-zinc-600 dark:text-amber-400 flex items-center"> 
-            <BiRightArrow size={20} className="mr-4" />
-            {pageContent.aboutme.title}
+        <section id="about-me-section">
+          <h1 className="text-xl laptop:text-2xl mt-8 text-zinc-600 dark:text-amber-400 flex items-center uppercase tracking-wider font-semibold"> 
+            <span className="font-press-start text-amber-400 dark:text-zinc-100">{pageContent.aboutme.title.charAt(0)}</span>
+            {pageContent.aboutme.title.substring(1, 1000)}
           </h1>
           <div className="mt-4 text-sm text-zinc-500 dark:text-zinc-200 laptop:text-base">
             { pageContent.aboutme.content.map((paragraph, i) => {
@@ -48,10 +54,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full h-32 mt-12 text-zinc-500 dark:text-zinc-200">
-          <h1 className="text-xl laptop:text-2xl mb-6 text-zinc-600 dark:text-amber-400 flex items-center">
-            <BiRightArrow size={20} className="mr-4" /> 
-            Projetos
+        <section id="projects-section" className="w-full h-32 mt-12 text-zinc-500 dark:text-zinc-200">
+          <h1 className="text-xl laptop:text-2xl mb-6 text-zinc-600 dark:text-amber-400 flex items-center uppercase tracking-wider font-semibold">
+            <span className="font-press-start text-amber-400 dark:text-zinc-100">P</span>
+            rojetos
            </h1>
           <ul className="flex flex-col tablet:grid mt-6 tablet:grid-cols-3 gap-4">
             { projectsList.map((project, i) => {
@@ -67,7 +73,7 @@ export default function Home() {
               )
             }) }
           </ul>
-        <div className="h-10"></div>
+          <div className="h-10"></div>
         </section>
       </div>
     </>

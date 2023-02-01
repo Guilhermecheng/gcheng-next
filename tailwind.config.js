@@ -14,6 +14,12 @@ module.exports = {
       backgroundImage: {
         'dark-background':'url(/background_dark.png)',
         'white-background':'url(/background_white.png)',
+      },
+      fontFamily: {
+        'press-start': ['"Press Start 2P"', 'cursive'],
+        sans: [
+          'Poppins', 'sans-serif'
+        ]
       }
     },
   },

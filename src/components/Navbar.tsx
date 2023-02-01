@@ -119,7 +119,7 @@ export function Navbar() {
 
     return (
         <>
-            <div className={`${ isMobileMenuOpen ? "h-[100%]" : "h-0" } absolute z-20 bg-zinc-100 dark:bg-zinc-900 w-screen truncate flex flex-col items-center text-center ease-in-out duration-500`}>
+            <div id="mobile-menu" className={`${ isMobileMenuOpen ? "h-[100%]" : "h-0" } absolute z-20 bg-zinc-100 dark:bg-zinc-900 w-screen truncate flex flex-col items-center text-center ease-in-out duration-500`}>
                 <div className="block h-40"></div>
                 <ul className="mt-50">
                     { pages.map((page: PageProps) => {

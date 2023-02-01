@@ -16,8 +16,25 @@ export const homeContent = {
                 "Hoje em dia trabalho com ReactJS, NextJS, Typescript e outras tecnologias para entregar o melhor e mais atualizado stack para o desenvolvimento front end.",
             ]
         },
-
-
+        projects: {
+            title: "Projetos",
+            list: [
+                {
+                    title: "Larissa Silvestre",
+                    description: "",
+                    image: "https://github.com/Guilhermecheng.png",
+                    imgAlt: "um texto alt",
+                    link: "https://www.larissasilvestre.adv.br/",
+                },
+                {
+                    title: "Gasolina Agora",
+                    description: "",
+                    image: "https://github.com/Guilhermecheng.png",
+                    imgAlt: "um texto alt",
+                    link: "https://gasolina-agora-website.vercel.app/",
+                },
+            ]
+        },
     },
     en: {
         title: "Guilherme Cheng",
@@ -30,8 +47,27 @@ export const homeContent = {
         aboutme: {
             title: "About me",
             content: [
-                "Since a child, I was in love with tech.",
-                "Today I use ReactJS, NextJS and Typescript.",
+                "Still needs translating hahah",
+                "Please forgive me",
+            ]
+        },
+        projects: {
+            title: "Projects",
+            list: [
+                {
+                    title: "Larissa Silvestre website",
+                    description: "",
+                    image: "https://github.com/Guilhermecheng.png",
+                    imgAlt: "um texto alt",
+                    link: "https://www.larissasilvestre.adv.br/",
+                },
+                {
+                    title: "Gasolina Agora website",
+                    description: "",
+                    image: "https://github.com/Guilhermecheng.png",
+                    imgAlt: "um texto alt",
+                    link: "https://gasolina-agora-website.vercel.app/",
+                },
             ]
         },
     },
