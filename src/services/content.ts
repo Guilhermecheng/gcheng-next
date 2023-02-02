@@ -76,18 +76,31 @@ export const homeContent = {
 export const projectsList = [
     {
         title: "Larissa Silvestre",
-        description: "",
-        image: "https://github.com/Guilhermecheng.png",
-        imgAlt: "um texto alt",
+        description: "Um site legal",
+        image: "/lari-silvestre-thumb.png",
+        imgAlt: "Thumbnail do site larissasilvestre.adv.br",
+        screen:"/lari-website-screen.png",
+        screenAlt:"Screenshot do site larissasilvestre.adv.br",
         link: "https://www.larissasilvestre.adv.br/",
     },
     {
         title: "Gasolina Agora",
         description: "",
-        image: "https://github.com/Guilhermecheng.png",
-        imgAlt: "um texto alt",
+        image: "/gasolina-agora-thumb.png",
+        imgAlt: "thumbnail do site gasolina agora",
+        screen:"/gasol-website-screen.png",
+        screenAlt:"Screenshot do site Gasolina agora",
         link: "https://gasolina-agora-website.vercel.app/",
     },
+    {
+        title: "Worldtrip",
+        description: "",
+        image: "/worldtrip-thumb.png",
+        imgAlt: "thumbnail do projeto Worldtrip",
+        screen:"/worldtrip-website-screen.png",
+        screenAlt:"Screenshot do site Worldtrip",
+        link: "/",
+    }
     // {
     //     title: "um tema lorem",
     //     description: "Lorem, the famous ipsum, is watching BBB at his sacred house, when should watch Vikings",
