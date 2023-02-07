@@ -1,5 +1,5 @@
 import { GlobalContext } from "@/contexts/Contexts";
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 
 import { IoClose } from 'react-icons/io5';
 import { BsBoxArrowUpRight, BsGithub } from 'react-icons/bs';
@@ -8,12 +8,14 @@ import { Description } from "@radix-ui/react-dialog";
 
 export function ProjectModal() {
     const { setIsModalOpen, modalContent } = useContext(GlobalContext);
+    const imgRef = useRef(null);
+    
 
     return (
         <div className={`fixed top-0 z-50 w-screen h-screen`}>
             <div className="relative top-0 left-0 w-full h-full  bg-neutral-900 opacity-70" onClick={() => setIsModalOpen(false)}></div> // modal background
 
-            <div className="absolute left-[10%] twelve-hundred:left-[calc((100%-1000px)/2)] top-[15%] laptop:top-[5%] bg-zinc-200 dark:bg-neutral-700 w-[80%] h-[70%] laptop:h-[90%] max-w-[1000px] text-zinc-700 dark:text-zinc-200 rounded-lg">
+            <div className="absolute left-[10%] twelve-hundred:left-[calc((100%-1000px)/2)] top-[15%] laptop:top-[5%] bg-zinc-200 dark:bg-neutral-700 w-[80%] h-[70%] laptop:h-[90%] max-w-[1000px] text-zinc-700 dark:text-zinc-200 rounded-lg overflow-hidden">
                 { modalContent ? (
                     <div className="w-full flex flex-col items-center justify-center py-4 laptop:py-6">
                         <div id="modal-header" className=" px-4 laptop:px-10 h-10 w-full">
@@ -34,7 +36,7 @@ export function ProjectModal() {
                             </span>
                         </div>
                         {/* <iframe src={modalContent.link} className="w-full h-80 laptop:h-[600px] rounded-lg"></iframe> */}
-                        <div className="laptop:mt-2 w-full flex justify-center bg-zinc-900">
+                        <div className="laptop:mt-2 w-full flex justify-center bg-zinc-900" ref={imgRef}>
                             <img src={modalContent.screen} alt={modalContent.screenAlt} className="tablet:max-h-[380px] laptop:max-h-[500px]"  />
                         </div>
                         <div className="w-full grid grid-cols-2 py-2 px-4 laptop:px-12 gap-2">

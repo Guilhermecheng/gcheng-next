@@ -6,7 +6,7 @@ import { BiRightArrowAlt, BiSearchAlt } from "react-icons/bi";
 
 import { homeContent, projectsList } from "@/services/content";
 import Link from "next/link";
-import { ProjectModal } from "@/components/ProjectModal";
+import { SectionTitle } from "@/components/SectionTitle";
 
 export default function Home() {
   const { language, setIsModalOpen, setModalContent } = useContext(GlobalContext);
@@ -47,10 +47,7 @@ export default function Home() {
         </section>
           
         <section id="about-me-section">
-          <h1 className="text-xl laptop:text-2xl mt-8 text-zinc-600 dark:text-amber-400 flex items-center uppercase tracking-wider font-semibold"> 
-            <span className="font-press-start text-amber-400 dark:text-zinc-100">{pageContent.aboutme.title.charAt(0)}</span>
-            {pageContent.aboutme.title.substring(1, 1000)}
-          </h1>
+          <SectionTitle title={pageContent.aboutme.title} />
           <div className="mt-4 text-sm text-zinc-500 dark:text-zinc-200 laptop:text-base">
             { pageContent.aboutme.content.map((paragraph, i) => {
               return (
@@ -61,10 +58,7 @@ export default function Home() {
         </section>
 
         <section id="projects-section" className="w-full h-32 mt-8 text-zinc-500 dark:text-zinc-200">
-          <h1 className="text-xl laptop:text-2xl mb-6 text-zinc-600 dark:text-amber-400 flex items-center uppercase tracking-wider font-semibold">
-            <span className="font-press-start text-amber-400 dark:text-zinc-100">P</span>
-            rojetos
-           </h1>
+          <SectionTitle title={pageContent.projects.title} />
            
            
            { language === "ptBR" ? (
@@ -91,7 +85,9 @@ export default function Home() {
             }) }
           </ul>
           <div className="h-10 mt-6 w-full flex justify-end">
-            <span className="rounded-lg cursor-pointer text-zinc-100 flex items-center gap-2 hover:underline hover:underline-offset-1">Veja mais <BiRightArrowAlt size={20} /></span>
+            <Link href="/projects">
+              <span className="rounded-lg cursor-pointer text-zinc-100 flex items-center gap-2 hover:underline hover:underline-offset-1">Veja mais <BiRightArrowAlt size={20} /></span>
+            </Link>
           </div>
         </section>
       </div>
