@@ -5,7 +5,7 @@ import { IoClose } from 'react-icons/io5';
 import { BsBoxArrowUpRight, BsGithub } from 'react-icons/bs';
 import Link from "next/link";
 import { AnimatePresence } from 'framer-motion'
-import { BounceInDownDiv } from './BounceinDown';
+import { BounceInDownDiv } from './BounceInDown';
 
 
 export function ProjectModal() {
