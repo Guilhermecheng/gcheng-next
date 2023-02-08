@@ -77,7 +77,7 @@ export default function Home() {
                     <div className="absolute bottom-0 w-full h-full flex items-center justify-center bg-zinc-700 opacity-0 laptop:opacity-0 laptop:group-hover:opacity-80 transition ease-in-out duration-300 z-20 cursor-pointer">
                       {/* <p className="p-2 text-zinc-100">{project.title}</p> */}
                       { language === "ptBR" ? <p className="p-2 text-zinc-100">Saiba mais</p> : <p className="p-2 text-zinc-100">See more</p> }
-                      <BiSearchAlt size={40} className="" />
+                      <BiSearchAlt size={40} className="text-zinc-100" />
                     </div>
                   {/* </Link> */}
                 </li>
@@ -86,7 +86,7 @@ export default function Home() {
           </ul>
           <div className="h-10 mt-6 w-full flex justify-end">
             <Link href="/projects">
-              <span className="rounded-lg cursor-pointer text-zinc-100 flex items-center gap-2 hover:underline hover:underline-offset-1">Veja mais <BiRightArrowAlt size={20} /></span>
+              <span className="rounded-lg cursor-pointer text-zinc-600  dark:text-zinc-100 flex items-center gap-2 hover:underline hover:underline-offset-1">Veja mais <BiRightArrowAlt size={20} /></span>
             </Link>
           </div>
         </section>

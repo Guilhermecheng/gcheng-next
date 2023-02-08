@@ -6,6 +6,8 @@ import { PageTitle } from "@/components/PageTitle";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
 import { RiFilePaperFill } from "react-icons/ri";
+import { useContext } from "react";
+import { GlobalContext } from "@/contexts/Contexts";
 
 const contactMedias = [
     {
@@ -30,39 +32,43 @@ const contactMedias = [
     },
 ]
 
-const contactPageContent = {
+const contactPageTitle = {
     ptBR: {
-        title: "Entre em contato",
-        subtitle: "ainda estou pensando no subtitulo",
-        pageEntrance: "OI",
+        title: "Contato",
+        subtitle: "Entre em contato comigo!",
+        // pageEntrance: "OI",
     },
     en: {
         title: "Contact me",
         subtitle: "Let's have a coffee!  ☕️ ",
-        pageEntrance: "tchau",
+    //     pageEntrance: "tchau",
     },
 }
 
 export default function Contact() {
+    const { language } = useContext(GlobalContext);
+
+    let pageTitle = language === "ptBR" ? contactPageTitle.ptBR : contactPageTitle.en;
+
     
 
     return (
         <>
             <Head>
-                <title>Contato | Guilherme Cheng</title>
+                <title>{`${pageTitle.title} | Guilherme Cheng`}</title>
             </Head>
             
             <div className="text-zinc-400 dark:text-white w-full flex flex-col text-base laptop:text-lg laptop:h-screen">
                 <PageTitle 
-                    title={`Contact me`}
-                    subtitle={`Let's have a coffee!  ☕️ `}
+                    title={pageTitle.title}
+                    subtitle={pageTitle.subtitle}
                 />
 
                 <div id="about-content" className="mt-6 laptop:mt-8 text-zinc-500 dark:text-zinc-200">
-                    <h1>If you're interested in getting in touch, here are some ways you can find me:</h1>
+                    {/* <h1>If you're interested in getting in touch, here are some ways you can find me:</h1> */}
 
                     {/* <div className="pt-10 max-w-[560px] grid grid-cols-2 gap-8"> */}
-                    <div className="pt-10 flex flex-wrap items-center gap-4">
+                    <div className="flex flex-wrap items-center gap-4">
                         { contactMedias.map((media) => {
                             return (
                                 <div key={media.name} className="flex flex-col items-center justify-center py-4 laptop:py-8 w-36 laptop:w-40 border rounded-md cursor-pointer hover:bg-amber-400 hover:text-zinc-800">

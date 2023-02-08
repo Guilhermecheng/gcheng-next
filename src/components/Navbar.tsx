@@ -105,17 +105,23 @@ export function Navbar() {
         //     textPTBR: "Skills",
         // },
         {
+            id: "projects",
+            href: "/projects",
+            textEN: "Projects",
+            textPTBR: "Projetos",
+        },
+        {
             id: "contact",
             href: "/contact",
             textEN: "Contact",
             textPTBR: "Contato",
         },
-        {
-            id: "blog",
-            href: "/blog",
-            textEN: "Blog",
-            textPTBR: "Blog",
-        },
+        // {
+        //     id: "blog",
+        //     href: "/blog",
+        //     textEN: "Blog",
+        //     textPTBR: "Blog",
+        // },
     ]
 
     return (
