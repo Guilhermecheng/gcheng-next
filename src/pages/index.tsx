@@ -57,7 +57,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="projects-section" className="w-full h-32 mt-8 text-zinc-500 dark:text-zinc-200">
+        <section id="projects-section" className="w-full h-32 laptop:mt-2 text-zinc-500 dark:text-zinc-200">
           <SectionTitle title={pageContent.projects.title} />
            
            
