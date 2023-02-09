@@ -16,10 +16,11 @@ export function Layout({ children }: LayoutProps) {
         <div className="flex flex-col tablet:items-center laptop:items-start w-full laptop:h-screen">
             { isModalOpen && <ProjectModal /> }
             <Navbar />
+
             <div className="px-4 pt-4 laptop:pt-8 laptop:px-12 laptop:w-[60%] laptop:h-screen laptop:absolute laptop:right-0">
                 {children}
+                <PageFooter />
             </div>
-            {/* <PageFooter /> */}
         </div>
     )
 }

@@ -5,14 +5,14 @@ export const homeContent = {
         subtitle: "Desenvolvedor front end",
         pageEntrance: "Bem vindo à minha página!",
         description: [
-        "Sou Desenvolvedor Front end brasileiro. Atualmente me dedicando estudos na área e projetos pessoais, como esta página.",
+        "Meu nome é Guilherme, e sou desenvolvedor Front end. Atualmente me dedicando estudos na área e projetos pessoais e freelances.",
         "Aqui é o lugar certo para você que quer me conhecer um pouco melhor!"
         ],
 
         aboutme: {
             title: "Sobre mim",
             content: [
-                "Desde criança sempre fui apaixonado por tecnologia. No entanto, minha jornada neste mundo começou recentemente, em 2020. Ao começar meus estudos, me interessei pelo mundo do front end. Comecei estudando o HTML, CSS e o Javascript. Após me aprofundar muito neste mundo, descobri o React e suas tecnologias.",
+                "Desde criança sempre fui apaixonado por tecnologia. No entanto, minha jornada neste mundo começou recentemente, em 2020. Ao começar meus estudos em programação, me interessei pelo mundo do front end. Comecei estudando o HTML, CSS e o Javascript. Após me aprofundar muito neste mundo, descobri o React e suas tecnologias.",
                 "Hoje em dia trabalho com ReactJS, NextJS, Typescript e outras tecnologias para entregar o melhor e mais atualizado stack para o desenvolvimento front end.",
             ]
         },
@@ -110,10 +110,13 @@ export const projectsList = [
             '"O site perfeito para você encontrar sua próxima viagem!"',
             "Este site foi criado como um exercício de treinamento para o framework React, juntamente com Typescript, Next.js, Chakra-ui e o uso da API Prismic.",
             "Seu objetivo como caso de estudo foi focar no uso de estilos declarativos, nesse caso Chakra-ui, e responsividade de página, tendo sua estilização adaptada também para dispositivos móveis.",
+            "Baseado no exercício criado pela Rocketseat, no treinamento Ignite para ReactJS.",
         ],
         descriptionEN:[
             "This website was created as a training exercise for React framework, along with Typescript, Next.js, Chakra-ui and the use of Prismic API.",
             "It's goal as a study case was to focus on the use declarative styles, in that case Chakra-ui, and page responsiveness, having its stylization adapted for mobiles as well.",
+            "Based on an exercise created by Rocketseat, on its Ignite trail for ReactJS.",
+
         ],
         image: "/worldtrip-thumb.png",
         imgAlt: "thumbnail do projeto Worldtrip",

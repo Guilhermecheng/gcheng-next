@@ -68,7 +68,8 @@ export default function Home() {
            )}
 
 
-          <ul className="flex flex-col tablet:grid mt-6 tablet:grid-cols-3 gap-4">
+          {/* <ul className="flex flex-col tablet:grid mt-6 tablet:grid-cols-3 gap-4"> */}
+          <ul className="grid grid-cols-2 mt-6 tablet:grid-cols-3 gap-4">
             { projectsList.map((project, i) => {
               return (
                 <li key={i} onClick={ () => onProjectClick(project) } className="relative flex flex-col w-full rounded-lg overflow-hidden dark:border-2 dark:border-zinc-500 hover:border-2 hover:border-amber-400 hover:dark:border-amber-400 hover:cursor-pointer group">
@@ -84,11 +85,12 @@ export default function Home() {
               )
             }) }
           </ul>
-          <div className="h-10 mt-6 w-full flex justify-end">
+          <div className="min-h-10 mt-6 w-full flex justify-end pb-10 laptop:pb-4">
             <Link href="/projects">
               <span className="rounded-lg cursor-pointer text-zinc-600  dark:text-zinc-100 flex items-center gap-2 hover:underline hover:underline-offset-1">Veja mais <BiRightArrowAlt size={20} /></span>
             </Link>
           </div>
+          <div className="block"></div>
         </section>
       </div>
     </>

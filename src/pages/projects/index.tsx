@@ -40,7 +40,8 @@ export default function Projects() {
                 subtitle={pageTitle.subtitle}
             />
 
-            <ul className="flex flex-col tablet:grid mt-6 laptop:mt-8 tablet:grid-cols-3 gap-4 pb-6">
+            {/* <ul className="flex flex-col tablet:grid mt-6 laptop:mt-8 tablet:grid-cols-3 gap-4 pb-12 laptop:pb-6"> */}
+            <ul className="grid grid-cols-2 mt-6 laptop:mt-8 tablet:grid-cols-3 gap-4 pb-12 laptop:pb-6">
                 { projectsList.map((project, i) => {
                 return (
                     <li key={i} onClick={ () => onProjectClick(project) } className="relative flex flex-col w-full rounded-lg overflow-hidden dark:border-2 dark:border-zinc-500 hover:border-2 hover:border-amber-400 hover:dark:border-amber-400 hover:cursor-pointer group">
