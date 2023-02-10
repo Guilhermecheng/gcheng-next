@@ -12,6 +12,7 @@ import { IoMdClose } from "react-icons/io";
 import * as Switch from '@radix-ui/react-switch';
 import { GlobalContext } from "@/contexts/Contexts";
 import Head from "next/head";
+import { PageFooter } from "./PageFooter";
 
 interface PageProps {
     id: string;
@@ -196,17 +197,19 @@ export function Navbar() {
                     }) }
                 </div>
 
-                <Switch.Root className="SwitchRoot hidden laptop:block fixed bottom-10 left-10" id="dark-mode" checked={darkModeChecked} onCheckedChange={ () => setDarkModeAtPage(darkModeChecked) }>
+                <Switch.Root className="SwitchRoot hidden laptop:block fixed bottom-14 left-10" id="dark-mode" checked={darkModeChecked} onCheckedChange={ () => setDarkModeAtPage(darkModeChecked) }>
                     <Switch.Thumb className="SwitchThumb" />
                 </Switch.Root>
 
-                <div id="language" className="absolute bottom-10 hidden laptop:block text-zinc-500 dark:text-zinc-100">
+                {/* <div id="language" className="absolute bottom-10 hidden laptop:block text-zinc-500 dark:text-zinc-100"> */}
+                <div id="language" className="absolute bottom-14 hidden laptop:block text-zinc-500 dark:text-zinc-100">
                     <span>Language: <span>{ language === "ptBR" ? (
                         <span className="cursor-pointer text-zinc-800 dark:text-amber-400 hover:underline hover:underline-offset-1" onClick={() => setLanguage("EN")}>BR</span>
                     ) : (
                         <span className="cursor-pointer text-zinc-800 dark:text-amber-400 hover:underline hover:underline-offset-1" onClick={() => setLanguage("ptBR")}>EN</span>
                     ) }</span></span>
                 </div>
+                <PageFooter />
             </div>
         </>
     )
