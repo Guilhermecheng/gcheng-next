@@ -9,8 +9,9 @@ import { BounceInDownDiv } from './BounceInDown';
 
 
 export function ProjectModal() {
-    const { setIsModalOpen, modalContent } = useContext(GlobalContext);
+    const { language, setIsModalOpen, modalContent } = useContext(GlobalContext);
     const imgRef = useRef(null);
+    let projDescription = language === "ptBR" ? modalContent.description : modalContent.descriptionEN;
     
 
     return (
@@ -56,7 +57,7 @@ export function ProjectModal() {
                             </div>
                             
                             <div className="w-full px-4 laptop:px-12 py-4 tablet:pt-6 flex flex-col max-h-64 tablet:max-h-48 laptop:max-h-64 overflow-auto">
-                                {modalContent.description.map((paragraph: string, i: number) => {
+                                {projDescription.map((paragraph: string, i: number) => {
                                     return (
                                         <p key={i} className="mb-2 last:mb-0 text-sm laptop:text-base">{paragraph}</p>
                                     )

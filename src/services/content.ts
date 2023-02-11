@@ -47,8 +47,8 @@ export const homeContent = {
         aboutme: {
             title: "About me",
             content: [
-                "Still needs translating hahah",
-                "Please forgive me",
+                "Since I was a child, I've been a enthusiast of technology. But my journey started only recently, in 2020. Started my studies seeing a bit of everything, but fell in love with front end stack. So, I focused my studies, starting with HTML, CSS and JavaScript, and getting deep into ReactJS and its technologies. ",
+                "Today, I use ReactJS, NextJS, Typescript and all of its tools to deliver the best experience possible in front end applications.",
             ]
         },
         projects: {
@@ -80,7 +80,10 @@ export const projectsList = [
             "Website criado para a advogada Larissa Silvestre. Site foi criado utilizando NextJS, Chakra UI, Prismic CMS e Formspree",
             "O objetivo do site é entregar as principais informações sobre o business, além de ser uma forma de contato para quem procura uma advogada de família."
         ],
-        descriptionEN:[],
+        descriptionEN:[
+            "Webpage for the lawyer Larissa Silvestre. Created using NextJS, Chakra UI, Prismic and Formspree.",
+            "The objective is to deliver key information the lawyer, and be a way to contact the office."
+        ],
         image: "/lari-silvestre-thumb.png",
         imgAlt: "Thumbnail do site larissasilvestre.adv.br",
         screen:"/lari-website-screen.png",
@@ -97,7 +100,11 @@ export const projectsList = [
             "Além da plataforma, existe também a extensão para o navegador Chrome.",
             "PS: site ainda em desenvolvimento."
         ],
-        descriptionEN:[],
+        descriptionEN:[
+            "Website created to ease access to the updated price of the main fuel types in Brazil. It is possible to see the medium price of the week for each kind of fuel, in any of the capital cities of Brazil.",
+            "There's also a chrome extension available.",
+            "PS: site in development."
+        ],
         image: "/gasolina-agora-thumb.png",
         imgAlt: "thumbnail do site gasolina agora",
         screen:"/gasol-website-screen.png",
@@ -124,6 +131,27 @@ export const projectsList = [
         screenAlt:"Screenshot do site Worldtrip",
         link: "https://worldtrip-ruby.vercel.app/",
         githubLink: "https://github.com/Guilhermecheng/worldtrip",
+    },
+    {
+        title: "Spacetravelling",
+        description: [
+            "Spacetravelling é um blog focado no mundo da programação.",
+            "Uma plataforma simples, criado para dividir ideias e conhecimento com a comunidade.",
+            "Projeto de estudo criado com NextJS e a API do Prismic, e treinar o funcionamento de funcões como GetStaticProps e GetStaticPaths",
+            "Baseado no exercício criado pela Rocketseat, no treinamento Ignite para ReactJS.",
+        ],
+        descriptionEN:[
+            "Spacetravelling is a blog about the programming world",
+            "A simple platform to share knowledge and ideas with the community.",
+            "This is a study project to learn and practice the use of Prismic API and also Next.js functions GetStaticProps and GetStaticPaths.",
+            "Based on an exercise created by Rocketseat, on its Ignite trail for ReactJS.",
+        ],
+        image: "/spacetravelling-thumb.png",
+        imgAlt: "thumbnail do projeto Spacetravelling",
+        screen:"/spacetravelling-screen.png",
+        screenAlt:"Screenshot do site Spacetravelling",
+        link: "https://spacetravelling-omega.vercel.app/",
+        githubLink: "https://github.com/Guilhermecheng/spacetravelling",
     }
     // {
     //     title: "um tema lorem",
