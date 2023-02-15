@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 import { PageTitle } from "@/components/PageTitle";
 
@@ -8,22 +9,26 @@ import { BsInstagram } from "react-icons/bs";
 import { RiFilePaperFill } from "react-icons/ri";
 import { useContext } from "react";
 import { GlobalContext } from "@/contexts/Contexts";
+import { SectionTitle } from "@/components/SectionTitle";
 
 const contactMedias = [
     {
         name: "Github",
         link: "https://github.com/Guilhermecheng",
-        logo: <FaGithub size={40} />,
+        // logo: <FaGithub size={40} />,
+        logo: <img src="/github.svg" alt="github" width={50} height={50} />,
     },
     {
         name: "Linkedin",
         link: "https://www.linkedin.com/in/guilherme-cheng/",
-        logo: <FaLinkedin size={40} />,
+        // logo: <FaLinkedin size={40} />,
+        logo: <img src="/linkedin.svg" alt="linkedin" width={50} height={50} />,
     },
     {
         name: "Instagram",
         link: "https://instagram.com/guilhermecheng/",
-        logo: <BsInstagram size={40} />,
+        // logo: <BsInstagram size={40} />,
+        logo: <img src="/instagram.svg" alt="instagram" width={50} height={50} />,
     },
     {
         name: "Resumé",
@@ -64,14 +69,16 @@ export default function Contact() {
                     subtitle={pageTitle.subtitle}
                 />
 
-                <div id="about-content" className="mt-6 laptop:mt-8 text-zinc-500 dark:text-zinc-200">
+                <div id="about-content" className="text-zinc-500 dark:text-zinc-200">
                     {/* <h1>If you're interested in getting in touch, here are some ways you can find me:</h1> */}
 
+                    <SectionTitle title="Minhas redes sociais" />
                     {/* <div className="pt-10 max-w-[560px] grid grid-cols-2 gap-8"> */}
-                    <div className="flex flex-wrap items-center gap-4">
+                    <div className="mt-6 laptop:mt-8 flex flex-wrap justify-center gap-4">
                         { contactMedias.map((media) => {
                             return (
-                                <div key={media.name} className="flex flex-col items-center justify-center py-4 laptop:py-8 w-36 laptop:w-40 border rounded-md cursor-pointer hover:bg-amber-400 hover:text-zinc-800">
+                                // <div key={media.name} className="flex flex-col items-center justify-center py-4 laptop:py-8 w-36 laptop:w-40 border rounded-full cursor-pointer hover:bg-amber-400 hover:text-zinc-800">
+                                <div key={media.name} className="flex flex-col items-center justify-center py-4 laptop:py-8 w-36 laptop:w-40 rounded-full cursor-pointer hover:text-amber-400">
                                     <Link href={media.link} className="flex flex-col items-center gap-y-4" target="_blank">
                                         <span>{ media.logo }</span>
                                         <span>{ media.name }</span>
@@ -80,6 +87,11 @@ export default function Contact() {
                             )
                         }) }
 
+                    </div>
+
+                    <div>
+                        <SectionTitle title="Deixe sua mensagem" />
+                        <div className="mt-6 laptop:mt-8 block w-full h-80 bg-zinc-300 dark:bg-zinc-600 rounded-md"></div>
                     </div>
                 </div>
 
