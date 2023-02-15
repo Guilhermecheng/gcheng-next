@@ -72,13 +72,13 @@ export default function Contact() {
                 <div id="about-content" className="text-zinc-500 dark:text-zinc-200">
                     {/* <h1>If you're interested in getting in touch, here are some ways you can find me:</h1> */}
 
-                    <SectionTitle title="Minhas redes sociais" />
+                    <SectionTitle title={language === "ptBR" ? `Minhas redes sociais` : `My social network`} />
                     {/* <div className="pt-10 max-w-[560px] grid grid-cols-2 gap-8"> */}
-                    <div className="mt-6 laptop:mt-8 flex flex-wrap justify-center gap-4">
+                    <div className="mt-6 laptop:mt-8 flex flex-wrap justify-center laptop:justify-start gap-4">
                         { contactMedias.map((media) => {
                             return (
                                 // <div key={media.name} className="flex flex-col items-center justify-center py-4 laptop:py-8 w-36 laptop:w-40 border rounded-full cursor-pointer hover:bg-amber-400 hover:text-zinc-800">
-                                <div key={media.name} className="flex flex-col items-center justify-center py-4 laptop:py-8 w-36 laptop:w-40 rounded-full cursor-pointer hover:text-amber-400">
+                                <div key={media.name} className="flex flex-col py-4 laptop:py-8 w-36 laptop:w-40 rounded-full cursor-pointer hover:text-amber-400">
                                     <Link href={media.link} className="flex flex-col items-center gap-y-4" target="_blank">
                                         <span>{ media.logo }</span>
                                         <span>{ media.name }</span>
@@ -90,7 +90,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                        <SectionTitle title="Deixe sua mensagem" />
+                        <SectionTitle title={language === "ptBR" ? `Deixe sua mensagem` : `Leave a message`} />
                         <div className="mt-6 laptop:mt-8 block w-full h-80 bg-zinc-300 dark:bg-zinc-600 rounded-md"></div>
                     </div>
                 </div>
