@@ -17,6 +17,7 @@ const contactMedias = [
         link: "https://github.com/Guilhermecheng",
         // logo: <FaGithub size={40} />,
         logo: <img src="/github.svg" alt="github" width={50} height={50} />,
+        logoDark: <img src="/github-white.svg" alt="github" width={50} height={50} />,
     },
     {
         name: "Linkedin",
@@ -51,7 +52,7 @@ const contactPageTitle = {
 }
 
 export default function Contact() {
-    const { language } = useContext(GlobalContext);
+    const { language, darkModeChecked } = useContext(GlobalContext);
 
     let pageTitle = language === "ptBR" ? contactPageTitle.ptBR : contactPageTitle.en;
 
@@ -69,7 +70,7 @@ export default function Contact() {
                     subtitle={pageTitle.subtitle}
                 />
 
-                <div id="about-content" className="text-zinc-500 dark:text-zinc-200">
+                <div id="about-content" className="text-zinc-500 dark:text-zinc-100">
                     {/* <h1>If you're interested in getting in touch, here are some ways you can find me:</h1> */}
 
                     <SectionTitle title={language === "ptBR" ? `Minhas redes sociais` : `My social network`} />
@@ -78,9 +79,9 @@ export default function Contact() {
                         { contactMedias.map((media) => {
                             return (
                                 // <div key={media.name} className="flex flex-col items-center justify-center py-4 laptop:py-8 w-36 laptop:w-40 border rounded-full cursor-pointer hover:bg-amber-400 hover:text-zinc-800">
-                                <div key={media.name} className="flex flex-col py-4 laptop:py-8 w-36 laptop:w-40 rounded-full cursor-pointer hover:text-amber-400">
+                                <div key={media.name} className="flex flex-col py-4 laptop:py-8 w-36 laptop:w-40 rounded-md cursor-pointer bg-zinc-100 dark:bg-zinc-900 hover:bg-amber-400 hover:dark:bg-amber-400 hover:text-zinc-800">
                                     <Link href={media.link} className="flex flex-col items-center gap-y-4" target="_blank">
-                                        <span>{ media.logo }</span>
+                                        { (darkModeChecked && media.logoDark) ? <span>{ media.logoDark }</span> : <span>{ media.logo }</span> }
                                         <span>{ media.name }</span>
                                     </Link>
                                 </div>

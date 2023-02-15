@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 
 
-import { projectsList } from "@/services/content";
+import { projectsList } from "@/data/projects";
 import Head from "next/head";
 
 const projPageTitle = {

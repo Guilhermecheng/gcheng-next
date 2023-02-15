@@ -16,7 +16,7 @@ export function Layout({ children }: LayoutProps) {
             { isModalOpen && <ProjectModal /> }
             <Navbar />
 
-            <div className="px-4 pt-4 laptop:pt-8 laptop:px-12 laptop:w-[60%] laptop:h-screen laptop:absolute laptop:right-0">
+            <div className="px-4 pt-4 laptop:px-12 laptop:w-[60%] laptop:h-screen laptop:absolute laptop:right-0">
                 {children}
             </div>
         </div>
