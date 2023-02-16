@@ -1,5 +1,6 @@
-import { GlobalContext } from "@/contexts/Contexts";
 import { ReactNode, useContext } from "react";
+
+import { GlobalContext } from "@/contexts/Contexts";
 import { Navbar } from "./Navbar";
 import { ProjectModal } from "./ProjectModal";
 

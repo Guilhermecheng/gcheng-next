@@ -1,11 +1,13 @@
-import { GlobalContext } from "@/contexts/Contexts";
+import Link from "next/link";
 import { useContext, useRef, useState } from "react";
 
 import { IoClose } from 'react-icons/io5';
 import { BsBoxArrowUpRight, BsGithub } from 'react-icons/bs';
-import Link from "next/link";
+
 import { AnimatePresence } from 'framer-motion'
+
 import { BounceInDownDiv } from './BounceInDown';
+import { GlobalContext } from "@/contexts/Contexts";
 
 
 export function ProjectModal() {

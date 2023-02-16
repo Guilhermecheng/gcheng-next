@@ -1,14 +1,15 @@
-import { GlobalContext } from "@/contexts/Contexts";
+import Link from "next/link";
 import Head from "next/head";
-
 import { useContext } from "react";
-import { BiRightArrowAlt, BiSearchAlt } from "react-icons/bi";
+
+import { BiRightArrowAlt } from "react-icons/bi";
 
 import { homeContent } from "@/data/home";
 import { projectsList } from "@/data/projects";
+import { GlobalContext } from "@/contexts/Contexts";
 
-import Link from "next/link";
 import { SectionTitle } from "@/components/SectionTitle";
+import { ProjectThumb } from "@/components/ProjectThumb";
 
 export default function Home() {
   const { language, setIsModalOpen, setModalContent } = useContext(GlobalContext);
@@ -61,29 +62,26 @@ export default function Home() {
 
         <section id="projects-section" className="w-full h-32 laptop:mt-2 text-zinc-500 dark:text-zinc-200">
           <SectionTitle title={pageContent.projects.title} />
-           
-           
+
            { language === "ptBR" ? (
             <p className="laptop:hidden">Clique no projeto de interesse para saber mais</p>
            ) : (
             <p className="laptop:hidden">Click on the desired project to see more</p>
            )}
 
-
           <ul className="grid grid-cols-2 mt-6 tablet:grid-cols-3 gap-4">
             { projectsList.slice(0, 3).map((project, i) => {
               return (
-                <li key={i} onClick={ () => onProjectClick(project) } className="relative flex flex-col w-full rounded-lg overflow-hidden dark:border-2 dark:border-zinc-500 hover:border-2 hover:border-amber-400 hover:dark:border-amber-400 hover:cursor-pointer group">
-                    <img src={project.image} alt={project.imgAlt} className='w-full bg-center bg-no-repeat' />
-                    <div className="absolute bottom-0 w-full h-full flex items-center justify-center bg-zinc-700 opacity-0 laptop:opacity-0 laptop:group-hover:opacity-80 transition ease-in-out duration-300 z-20 cursor-pointer">
-                      {/* <p className="p-2 text-zinc-100">{project.title}</p> */}
-                      { language === "ptBR" ? <p className="p-2 text-zinc-100">Saiba mais</p> : <p className="p-2 text-zinc-100">See more</p> }
-                      <BiSearchAlt size={40} className="text-zinc-100" />
-                    </div>
-                </li>
+                <ProjectThumb
+                  key={i}
+                  project={project}
+                  onClickFunction={onProjectClick}
+                  language={language}
+                />
               )
             }) }
           </ul>
+
           <div className="min-h-10 mt-6 w-full flex justify-end pb-6 laptop:pb-4">
             <Link href="/projects">
               <span className="rounded-lg cursor-pointer text-zinc-600  dark:text-zinc-100 flex items-center gap-2 hover:underline hover:underline-offset-1">Veja mais <BiRightArrowAlt size={20} /></span>

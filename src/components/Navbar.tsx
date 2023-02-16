@@ -1,17 +1,16 @@
 import Link from "next/link";
+import Head from "next/head";
 import { useRouter } from "next/router";
+import { useContext, useEffect, useState } from "react";
+import * as Switch from '@radix-ui/react-switch';
 
 import { gql } from "@apollo/client";
-import client from "@/services/apolloClient";
-
-import { useContext, useEffect, useState } from "react";
 
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 
-import * as Switch from '@radix-ui/react-switch';
+import client from "@/services/apolloClient";
 import { GlobalContext } from "@/contexts/Contexts";
-import Head from "next/head";
 import { PageFooter } from "./PageFooter";
 
 interface PageProps {

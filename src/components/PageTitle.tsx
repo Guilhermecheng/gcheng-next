@@ -1,7 +1,6 @@
 interface PageTitleProps {
     title: string;
     subtitle?: string;
-    // children: React.ReactNode;
 }
 
 export function PageTitle({ title, subtitle }: PageTitleProps) {
@@ -13,8 +12,6 @@ export function PageTitle({ title, subtitle }: PageTitleProps) {
                     <span className="font-press-start text-amber-400 dark:text-zinc-100">{title.charAt(0)}</span>
                     {title.substring(1, 1000)}
                 </div>
-
-                {/* { title } */}
             </h1>
 
             { subtitle && (
