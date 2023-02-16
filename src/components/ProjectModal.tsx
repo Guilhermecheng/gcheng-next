@@ -8,6 +8,7 @@ import { AnimatePresence } from 'framer-motion'
 
 import { BounceInDownDiv } from './BounceInDown';
 import { GlobalContext } from "@/contexts/Contexts";
+import Image from "next/image";
 
 
 export function ProjectModal() {
@@ -41,10 +42,12 @@ export function ProjectModal() {
                                     <IoClose size={30} />
                                 </span>
                             </div>
-                            {/* <iframe src={modalContent.link} className="w-full h-80 laptop:h-[600px] rounded-lg"></iframe> */}
-                            <div className="laptop:mt-2 w-full flex justify-center bg-zinc-900" ref={imgRef}>
+
+                            <iframe src={modalContent.link} className="w-full h-[380px] laptop:h-[500px] rounded-md hidden laptop:block"></iframe>
+                            <div className="laptop:hidden laptop:mt-2 w-full flex justify-center bg-zinc-900" ref={imgRef}>
                                 <img src={modalContent.screen} alt={modalContent.screenAlt} className="tablet:max-h-[380px] laptop:max-h-[500px]"  />
                             </div>
+
                             <div className="w-full grid grid-cols-2 py-2 px-4 laptop:px-12 gap-2">
                                     <span className="w-full flex tablet:hidden justify-center gap-x-2 underline underline-offset-2 cursor-pointer hover:text-amber-400">
                                         <Link href={modalContent.link} target="_blank">
