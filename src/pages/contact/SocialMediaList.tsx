@@ -32,7 +32,7 @@ const contactMedias = [
     },
 ]
 
-export function SocialMediaList({ darkModeChecked }: SocialMediaListProps) {
+export default function SocialMediaList({ darkModeChecked }: SocialMediaListProps) {
     return (
         <div className="mt-6 laptop:mt-8 flex flex-wrap justify-center laptop:justify-start gap-4">
             { contactMedias.map((media) => {

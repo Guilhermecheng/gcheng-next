@@ -5,8 +5,8 @@ import { GlobalContext } from "@/contexts/Contexts";
 
 import { PageTitle } from "@/components/PageTitle";
 import { SectionTitle } from "@/components/SectionTitle";
-import { Form } from "./Form";
-import { SocialMediaList } from "./SocialMediaList";
+import Form from "./Form";
+import SocialMediaList from "./SocialMediaList";
 
 const contactPageTitle = {
     ptBR: {

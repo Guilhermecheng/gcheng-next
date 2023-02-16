@@ -22,7 +22,7 @@ const placeholders = {
     }
 }
 
-export function Form() {
+export default function Form() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
 
