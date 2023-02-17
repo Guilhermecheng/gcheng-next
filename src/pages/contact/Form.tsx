@@ -7,7 +7,7 @@ import "react-toastify/ReactToastify.min.css";
 
 
 import { GlobalContext } from "@/contexts/Contexts";
-import { InputError } from "./FormInputError";
+import InputError from "./InputError";
 import axios from "axios";
 
 interface Inputs {

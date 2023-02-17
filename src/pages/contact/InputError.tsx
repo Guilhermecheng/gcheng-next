@@ -18,7 +18,7 @@ const validations:  { [key: string]: any } = {
     }
 }
 
-export function InputError({ type, field }: InputErrorProps) {
+export default function InputError({ type, field }: InputErrorProps) {
     return(
         <span className="text-red-400 text-sm mt-[-10px] laptop:mt-[-16px]">
             { validations[field][type] }
