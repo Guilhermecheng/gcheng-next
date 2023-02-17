@@ -8,6 +8,7 @@ import { gql } from "@apollo/client";
 
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
+import { FiMoon, FiSun } from "react-icons/fi";
 
 import client from "@/services/apolloClient";
 import { GlobalContext } from "@/contexts/Contexts";
@@ -144,7 +145,9 @@ export function Navbar() {
                     }) }
                 </ul>
                 <Switch.Root className="SwitchRoot mb-2" id="dark-mode" checked={darkModeChecked} onCheckedChange={ () => setDarkModeAtPage(darkModeChecked) }>
-                    <Switch.Thumb className="SwitchThumb" />
+                    <Switch.Thumb className="SwitchThumb flex items-center justify-center">
+                        { darkModeChecked ? <FiMoon size={12} className="text-zinc-500" /> : <FiSun size={12} className="text-zinc-500" /> }
+                    </Switch.Thumb>
                 </Switch.Root>
 
                 <div id="language" className=" text-zinc-500 dark:text-zinc-100">
@@ -197,7 +200,9 @@ export function Navbar() {
                 </div>
 
                 <Switch.Root className="SwitchRoot hidden laptop:block fixed bottom-14 left-10" id="dark-mode" checked={darkModeChecked} onCheckedChange={ () => setDarkModeAtPage(darkModeChecked) }>
-                    <Switch.Thumb className="SwitchThumb" />
+                    <Switch.Thumb className="SwitchThumb flex items-center justify-center">
+                        { darkModeChecked ? <FiMoon size={12} className="text-zinc-500" /> : <FiSun size={12} className="text-zinc-500" /> }
+                    </Switch.Thumb>
                 </Switch.Root>
 
                 {/* <div id="language" className="absolute bottom-10 hidden laptop:block text-zinc-500 dark:text-zinc-100"> */}

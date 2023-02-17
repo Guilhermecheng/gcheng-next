@@ -29,7 +29,7 @@ button {
 }
 
 .SwitchThumb {
-  display: block;
+  //display: block;
   width: 21px;
   height: 21px;
   background-color: white;
