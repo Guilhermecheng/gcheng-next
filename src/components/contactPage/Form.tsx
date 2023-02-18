@@ -39,13 +39,27 @@ const placeholders = {
     }
 }
 
+const toastMessages = {
+    ptBR: {
+        pending: 'Enviando...',
+        success: 'Mensagem enviada com sucesso! 👌 ',
+        error: "Não foi possível concluir envio.. Tente novamente",
+        tryAgain: "Ops.. Tente novamente"
+    },
+    en: {
+        pending: 'Sending...',
+        success: 'Message sent! 👌 ',
+        error: "Error sending message.. Please try again",
+        tryAgain: "Ops.. Try again"
+    }
+}
+
 export default function Form() {
     const { language } = useContext(GlobalContext);
     let placeholderLang = language === "ptBR" ? placeholders.ptBR : placeholders.en;
+    let toasters = language === "ptBR" ? toastMessages.ptBR : toastMessages.en;
 
-    const [submitSuccess, setSubmitSuccess] = useState(false);
-
-    const { register, handleSubmit, watch, formState: { errors }, reset } = useForm<Inputs>({ resolver: yupResolver(schema) });
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<Inputs>({ resolver: yupResolver(schema) });
 
     const onSubmit: SubmitHandler<FormDataProps> = formData => {
         formData.subject = `Nova mensagem de ${formData.name} em guilhermecheng.com.br!`;
@@ -64,9 +78,9 @@ export default function Form() {
                 }
             })
             , {
-                pending: 'Enviando...',
-                success: 'Mensagem enviada com sucesso! 👌 ',
-                error: "Não foi possível concluir envio.. Tente novamente"
+                pending: toasters.pending,
+                success: toasters.success,
+                error: toasters.error,
             }
         )
         
@@ -74,7 +88,7 @@ export default function Form() {
 
     function onError(error: any) {
         console.log(error)
-        toast.error('Deu ruim!', {
+        toast.error(toasters.tryAgain, {
             theme: "colored",
         });
     }
@@ -83,7 +97,7 @@ export default function Form() {
         <>
         <ToastContainer
             position="top-center"
-            autoClose={5000}
+            autoClose={3000}
             hideProgressBar
             newestOnTop={false}
             closeOnClick
@@ -92,7 +106,6 @@ export default function Form() {
             draggable
             pauseOnHover
             theme="colored"
-            className="w-[400px]"
         />
 
         <div className="mt-4 laptop:mt-6 w-full rounded-md mb-4">

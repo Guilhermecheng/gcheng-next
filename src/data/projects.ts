@@ -77,6 +77,22 @@ export const projectsList = [
         screenAlt:"Screenshot do site Spacetravelling",
         link: "https://spacetravelling-omega.vercel.app/",
         githubLink: "https://github.com/Guilhermecheng/spacetravelling",
+    },
+    {
+        title: "Guilherme Cheng",
+        description: [
+            "Wow... quase aquele filme Inception!",
+            "O projeto é este website. Basicamente, meu portifólio pessoal, e uma maneira de me comunicar com o mundo (quando o blog estiver em funcionamento)."
+        ],
+        descriptionEN:[
+            "Wow... that's kind of an inception!",
+            "This website's project. It's my personal portifolio"
+        ],
+        image: "/guilherme-cheng-thumb.png",
+        imgAlt: "Thumbnail do site guilhermecheng.com.br",
+        screen:"/guilherme-cheng-screen.png",
+        screenAlt:"Screenshot do site guilhermecheng.com.br",
+        link: "https://www.guilhermecheng.com.br/",
+        // githubLink: "",
     }
-   
 ]
