@@ -49,25 +49,27 @@ export default function Form() {
 
     const onSubmit: SubmitHandler<FormDataProps> = formData => {
         formData.subject = `Nova mensagem de ${formData.name} em guilhermecheng.com.br!`;
-        // toast.error('Mensagem enviada com sucesso!', {
-        //     theme: "colored",
-        // });
-
-        axios({
-            method: 'post',
-            url: `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_API_URL}`,
-            data: formData,
-            headers: {
-          "Content-Type": "application/json",
-        },
-        }).then(response => {
-            if(response.status === 200) {
-                toast.success('Mensagem enviada com sucesso!', {
-                    theme: "colored",
-                });
-                reset()
+        
+        toast.promise(
+            axios({
+                method: 'post',
+                url: `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_API_URL}`,
+                data: formData,
+                headers: {
+              "Content-Type": "application/json",
+            },
+            }).then(response => {
+                if(response.status === 200) {
+                    reset()
+                }
+            })
+            , {
+                pending: 'Enviando...',
+                success: 'Mensagem enviada com sucesso! 👌 ',
+                error: "Não foi possível concluir envio.. Tente novamente"
             }
-        })
+        )
+        
     };
 
     function onError(error: any) {
@@ -89,6 +91,7 @@ export default function Form() {
             pauseOnFocusLoss
             draggable
             pauseOnHover
+            theme="colored"
             className="w-[400px]"
         />
 
