@@ -19,12 +19,12 @@ const contactMedias = [
         // logo: <FaLinkedin size={40} />,
         logo: <img src="/linkedin.svg" alt="linkedin" width={50} height={50} />,
     },
-    {
-        name: "Instagram",
-        link: "https://instagram.com/guilhermecheng/",
-        // logo: <BsInstagram size={40} />,
-        logo: <img src="/instagram.svg" alt="instagram" width={50} height={50} />,
-    },
+    // {
+    //     name: "Instagram",
+    //     link: "https://instagram.com/guilhermecheng/",
+    //     // logo: <BsInstagram size={40} />,
+    //     logo: <img src="/instagram.svg" alt="instagram" width={50} height={50} />,
+    // },
     {
         name: "Resumé",
         link: "https://guilhermecheng.notion.site/CV-Guilherme-Ferreira-Cheng-eefed60dfd0941e8899c75d182551acd/",

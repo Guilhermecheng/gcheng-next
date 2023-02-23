@@ -84,7 +84,7 @@ export default function Home() {
 
           <div className="min-h-10 mt-6 w-full flex justify-end pb-6 laptop:pb-4">
             <Link href="/projects">
-              <span className="rounded-lg cursor-pointer text-zinc-600  dark:text-zinc-100 flex items-center gap-2 hover:underline hover:underline-offset-1">Veja mais <BiRightArrowAlt size={20} /></span>
+              <span className="rounded-lg cursor-pointer text-zinc-600  dark:text-zinc-100 flex items-center gap-2 hover:underline hover:underline-offset-1">{language === "ptBR" ? "Veja mais" : "See more"} <BiRightArrowAlt size={20} /></span>
             </Link>
           </div>
           <div className="block"></div>
