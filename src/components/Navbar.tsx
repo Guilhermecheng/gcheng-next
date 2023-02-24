@@ -93,12 +93,12 @@ export function Navbar() {
             textEN: "Home",
             textPTBR: "Home",
         },
-        {
-            id: "about",
-            href: "/about",
-            textEN: "About",
-            textPTBR: "Sobre",
-        },
+        // {
+        //     id: "about",
+        //     href: "/about",
+        //     textEN: "About",
+        //     textPTBR: "Sobre",
+        // },
         // {
         //     id: "skills",
         //     href: "/skills",
