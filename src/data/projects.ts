@@ -79,20 +79,41 @@ export const projectsList = [
         githubLink: "https://github.com/Guilhermecheng/spacetravelling",
     },
     {
-        title: "Guilherme Cheng",
+        title: "Todo",
         description: [
-            "Wow... quase aquele filme Inception!",
-            "O projeto é este website. Basicamente, meu portifólio pessoal, e uma maneira de me comunicar com o mundo (quando o blog estiver em funcionamento)."
+            "Todo é um simples task manager. Seu objetivo é adjudar o usuário a se organizar.",
+            "Através da plataforma, você pode criar uma nova tarefa, marcar ou desmarcar como feita e apagar a tarefa.",
+            "Projeto de estudo criado com ReactJS, com o objetivo de treinar conhecimentos como gerenciamento de estados de diversos componentes e utilização de restAPIs.",
+            "Baseado no exercício criado pela Rocketseat, no treinamento Ignite para ReactJS.",
         ],
         descriptionEN:[
-            "Wow... that's kind of an inception!",
-            "This website's project. It's my personal portifolio"
+            "Todo is a simple task manager. Its goal is to help the user stay organized.",
+            "Through the platform, you can create a new task, mark or unmark it as done, and delete the task.",
+            "This is a study project created with ReactJS, with the aim of practicing knowledge such as state management of various components and the use of restAPIs.",
+            "Based on the exercise created by Rocketseat, in the Ignite training for ReactJS.",
         ],
-        image: "/guilherme-cheng-thumb.png",
-        imgAlt: "Thumbnail do site guilhermecheng.com.br",
-        screen:"/guilherme-cheng-screen.png",
-        screenAlt:"Screenshot do site guilhermecheng.com.br",
-        link: "https://www.guilhermecheng.com.br/",
-        // githubLink: "",
-    }
+        image: "/todo-thumb.png",
+        imgAlt: "thumbnail do projeto todo",
+        screen:"/todo-screen.png",
+        screenAlt:"Screenshot do site todo",
+        link: "https://todo-one-theta.vercel.app/",
+        githubLink: "https://github.com/Guilhermecheng/todo",
+    },
+    // {
+    //     title: "Guilherme Cheng",
+    //     description: [
+    //         "Wow... quase aquele filme Inception!",
+    //         "O projeto é este website. Basicamente, meu portifólio pessoal, e uma maneira de me comunicar com o mundo (quando o blog estiver em funcionamento)."
+    //     ],
+    //     descriptionEN:[
+    //         "Wow... that's kind of an inception!",
+    //         "This website's project. It's my personal portifolio"
+    //     ],
+    //     image: "/guilherme-cheng-thumb.png",
+    //     imgAlt: "Thumbnail do site guilhermecheng.com.br",
+    //     screen:"/guilherme-cheng-screen.png",
+    //     screenAlt:"Screenshot do site guilhermecheng.com.br",
+    //     link: "https://www.guilhermecheng.com.br/",
+    //     // githubLink: "",
+    // }
 ]
