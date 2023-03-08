@@ -27,7 +27,8 @@ const contactMedias = [
     // },
     {
         name: "Resumé",
-        link: "https://guilhermecheng.notion.site/CV-Guilherme-Ferreira-Cheng-eefed60dfd0941e8899c75d182551acd/",
+        // link: "https://guilhermecheng.notion.site/CV-Guilherme-Ferreira-Cheng-eefed60dfd0941e8899c75d182551acd/",
+        link: "https://guilhermecheng.notion.site/Resum-Guilherme-Ferreira-Cheng-72ec02b4c8cc4c078af63ced001e8b07",
         logo: <RiFilePaperFill size={50} />,
     },
 ]
