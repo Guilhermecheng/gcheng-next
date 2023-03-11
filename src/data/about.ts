@@ -22,16 +22,19 @@ export const aboutPageContent = {
                 {
                     title: "Frontend developer",
                     company: "Guilherme Cheng",
-                    timeFrom: "jul/20",
-                    timeTo: "Today",
+                    timeFrom: "Jan 2022",
+                    timeTo: "Atualmente",
                     tasks: [
-                        "Manter a qualidade e padrão de serviço da equipe de processamento de reclamações de garantia no suporte contratado do Acordo de Nível de Serviço.",
+                        "Desenvolvimento de aplicações web reativas",
+                        "Desenvolvimento de landing pages",
+                        "criação do design e funcionalidades de páginas web",
+                        "Utilização e consumo de APIs"
                     ],
                 },
                 {
                     title: "Business Analyst",
                     company: "Accenture",
-                    timeFrom: "jul/22",
+                    timeFrom: "Jul 2022",
                     timeTo: "Atualmente",
                     tasks: [
                         "Manter a qualidade e padrão de serviço da equipe de processamento de reclamações de garantia no suporte contratado do Acordo de Nível de Serviço.",
@@ -40,13 +43,13 @@ export const aboutPageContent = {
                         "Instruir e treinar membros da equipe.",
                     ],
                 },
-                {
-                    title: "Analista de Garantia",
-                    company: "MSX International",
-                    timeFrom: "dez/21",
-                    timeTo: "jul/22",
-                    tasks: [],
-                },
+                // {
+                //     title: "Analista de Garantia",
+                //     company: "MSX International",
+                //     timeFrom: "dez/21",
+                //     timeTo: "jul/22",
+                //     tasks: [],
+                // },
             ]
         }
     },
@@ -70,11 +73,21 @@ export const aboutPageContent = {
             title: "Experience",
             text:"",
             expHistory: [
-                
+                {
+                    title: "Frontend developer",
+                    company: "Guilherme Cheng",
+                    timeFrom: "Jan 2022",
+                    timeTo: "Today",
+                    tasks: [
+                        "Development of reactive web applications",
+                        "Development of landing pages",
+                        "Creation of design and functionalities of web pages"
+                    ],
+                },
                 {
                     title: "Business Analyst",
                     company: "Accenture",
-                    timeFrom: "jul/22",
+                    timeFrom: "Jul 22",
                     timeTo: "Today",
                     tasks: [
                         "Manter a qualidade e padrão de serviço da equipe de processamento de reclamações de garantia no suporte contratado do Acordo de Nível de Serviço.",
@@ -83,15 +96,15 @@ export const aboutPageContent = {
                         "Instruir e treinar membros da equipe.",
                     ],
                 },
-                {
-                    title: "Warranty Analyst",
-                    company: "MSX International",
-                    timeFrom: "december 21",
-                    timeTo: "july 22",
-                    tasks: [
+                // {
+                //     title: "Warranty Analyst",
+                //     company: "MSX International",
+                //     timeFrom: "december 21",
+                //     timeTo: "july 22",
+                //     tasks: [
 
-                    ],
-                },
+                //     ],
+                // },
             ]
         }
     },

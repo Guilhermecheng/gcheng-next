@@ -8,7 +8,7 @@ interface ProjectProps {
     imgAlt: string;
     screen:string;
     screenAlt: string;
-    link: string;
+    link?: string;
     githubLink?: string;
 }
 

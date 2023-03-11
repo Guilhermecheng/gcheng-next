@@ -70,14 +70,18 @@ export default function AboutPage() {
                         
                         { pageContent.experience.expHistory.map((exp, i) => {
                             return (
-                                <li key={i} className="mb-8 border-l-2 border-zinc-300 px-8 relative">
-                                    <div className="flex gap-x-4">
-                                        <h1 className="text-xl font-semibold ">{exp.title}</h1>
-                                        <span className="text-lg font-semibold text-zinc-400">{exp.company}</span>
+                                <li key={i} className="mb-8 border-l-2 border-amber-400 px-8 relative">
+                                    <div className="flex flex-col tablet:flex-row tablet:gap-x-4">
+                                        <h1 className="text-xl laptop:text-2xl font-semibold italic">{exp.title}</h1>
+                                        <span className="text-sm laptop:text-md font-semibold text-zinc-400 mt-0 tablet:mt-2">{exp.company}</span>
                                     </div>
-                                    <p className="text-sm text-zinc-400">de jul/2022 até atualmente</p>
+                                    { language === "ptBR" ? (
+                                        <p className="text-sm text-zinc-400 ">de {exp.timeFrom} até {exp.timeTo}</p>
+                                    ) : (
+                                        <p className="text-sm text-zinc-400 ">from {exp.timeFrom} to {exp.timeTo}</p>
+                                    ) }
                                     <ul className="mt-2 pl-2">
-                                        { exp.tasks.map( (item, i) =>  <li key={i} className="text-base mb-2 lat:mb-0 list-disc">{item}</li>  ) }
+                                        { exp.tasks.map( (item, i) =>  <li key={i} className="text-sm laptop:text-base mb-2 last:mb-0 list-disc">{item}</li>  ) }
                                     </ul>
                                 </li>
                             )
