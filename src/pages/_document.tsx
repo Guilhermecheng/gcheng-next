@@ -7,7 +7,7 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet"/>
-        <link rel="shortcut icon" href="/logo-dark.ico" />
+        <link rel="icon" type="image/svg+xml" href="/logo_dark.svg" />
       </Head>
       <body className='bg-white dark:bg-zinc-800'>
         <Main />
