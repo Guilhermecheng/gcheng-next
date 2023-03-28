@@ -40,6 +40,27 @@ export const projectsList = [
         link: "https://gasolina-agora-website.vercel.app/",
     },
     {
+        title: "Github Blog",
+        description: [
+            'Uma nova maneira para compartilhar minhas ideias!',
+            "Github blog é um projeto de uma plataforma onde eu possa compartilhar ideias de formas simples, utilizando como base a API do Github. Os posts nada mais são do que issues do repositório!",
+            "Criado utilizando ReactJS e a API do Github",
+            "Baseado no exercício criado pela Rocketseat, no treinamento Ignite para ReactJS.",
+        ],
+        descriptionEN:[
+            'A new way to share my ideas!',
+            "Github blog is a project for a platform where I can share ideas in a simple way, using GitHub as the posts repository.",
+            "Created using ReactJS and Github API.",
+            "Based on an exercise created by Rocketseat, on its Ignite trail for ReactJS.",
+        ],
+        image: "/github-blog-thumb.png",
+        imgAlt: "thumbnail do site Github Blog",
+        screen:"/github-blog-screen.png",
+        screenAlt:"Screenshot do site Github Blog",
+        link: "https://github-blog-kappa.vercel.app/",
+        githubLink: "https://github.com/Guilhermecheng/github-blog",
+    },
+    {
         title: "Worldtrip",
         description: [
             'O site perfeito para você encontrar sua próxima viagem!',
@@ -108,13 +129,15 @@ export const projectsList = [
     {
         title: "Guilherme Cheng",
         description: [
-            "Isso mesmo! É este site!",
-            "Projeto de meu portifólio pessoal.",
+            "Este site!",
+            "Projeto de meu portifólio pessoal. Ainda em construção.",
+            "Seu intuito é ser um local onde se possa conhecer um pouco mais sobre mim, meus projetos, e ser também um meio de contato.",
             "Criado utilizando NextJS, Typescript e CMS da Hygraph."
         ],
         descriptionEN:[
             "Wow... that's kind of an inception!",
-            "This website's project. It's my personal portifolio.",
+            "This website's project. It's my personal portifolio. Still under construction.",
+            "Tts purpose is for this to be a place where you can learn a little more about me, my projects, and also a means of contact.",
             "Created with NextJS, Typescript and Hygraph CMS."
         ],
         image: "/guilherme-cheng-thumb.png",
