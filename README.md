@@ -16,7 +16,7 @@ About me, my habilities, my projects and more!
 # Features
 
 - Responsive design
-- Darke theme
-- Language options (ptBR or EN)
+- Dark theme
+- Multiple languages
 
 *Still under construction
