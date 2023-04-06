@@ -12,7 +12,7 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { ProjectThumb } from "@/components/ProjectThumb";
 
 export default function Home() {
-  const { language, setIsModalOpen, setModalContent } = useContext(GlobalContext);
+  const { language, setIsModalOpen, setModalContent, isModalOpen } = useContext(GlobalContext);
 
   let pageContent = language === "ptBR" ? homeContent.ptBR : homeContent.en;
 
@@ -27,7 +27,7 @@ export default function Home() {
         <title>Home | Guilherme Cheng</title>
       </Head>
 
-      <div className="text-zinc-500 dark:text-white w-full flex flex-col">
+      <div className={`text-zinc-500 dark:text-white w-full flex flex-col ${isModalOpen && "h-full overflow-y-hidden"}`}>
 
         <div id="logo-and-title" className="w-full flex flex-col align-center">
           <div className="flex w-full justify-center laptop:justify-start">

@@ -19,7 +19,7 @@ export function ProjectModal() {
 
     return (
         <div className={`fixed top-0 z-50 w-screen h-screen`}>
-            <div className="relative top-0 left-0 w-full h-full  bg-neutral-900 opacity-70 transform transition-all" onClick={() => setIsModalOpen(false)}></div> // modal background
+            <div className="relative top-0 left-0 w-full h-full overflow-hidden bg-neutral-900 opacity-70 transform transition-all" onClick={() => setIsModalOpen(false)}></div> // modal background
 
             <div className="absolute left-[10%] twelve-hundred:left-[calc((100%-1000px)/2)] top-[15%] laptop:top-[5%] bg-zinc-200 dark:bg-neutral-700 w-[80%] max-h-[70%] laptop:max-h-[90%] max-w-[1000px] text-zinc-700 dark:text-zinc-200 rounded-lg overflow-hidden transform transition-all">
                 <AnimatePresence>

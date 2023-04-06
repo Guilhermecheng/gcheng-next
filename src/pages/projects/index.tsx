@@ -20,7 +20,7 @@ const projPageTitle = {
 }
 
 export default function Projects() {
-    const {language, setIsModalOpen, setModalContent} = useContext(GlobalContext);
+    const {language, setIsModalOpen, setModalContent, isModalOpen } = useContext(GlobalContext);
 
     let pageTitle = language === "ptBR" ? projPageTitle.ptBR : projPageTitle.en;
 
@@ -30,7 +30,7 @@ export default function Projects() {
       }
 
     return (
-        <>
+        <div className={`${isModalOpen && "h-full overflow-y-hidden"}`}>
             <Head>
                 <title>{`${pageTitle.title} | Guilherme Cheng`}</title>
             </Head>
@@ -52,6 +52,6 @@ export default function Projects() {
                 )
                 }) }
             </ul>
-        </>
+        </div>
     )
 }

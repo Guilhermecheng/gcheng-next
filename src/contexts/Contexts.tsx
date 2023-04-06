@@ -8,7 +8,9 @@ interface ModalContentProps {
     link: string;
 }
 
-export const GlobalContext = createContext<any>(null);
+export const GlobalContext = createContext<any>({
+    isModalOpen: false,
+});
 
 export const Contexts = (props: any) => {
 
