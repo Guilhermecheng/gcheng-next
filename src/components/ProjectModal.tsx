@@ -46,13 +46,13 @@ export function ProjectModal() {
                                 </span>
                             </div>
 
-                            {modalContent.link && <iframe src={modalContent.link} className="w-full h-[380px] laptop:h-[500px] rounded-md hidden laptop:block"></iframe>}
+                            {modalContent.link && <iframe src={modalContent.link} className="w-full h-[380px] laptop:h-[500px] rounded-md hidden laptop:block scrollbar-thumb-rounded-full scrollbar-thumb-zinc-300 scrollbar-track-white dark:scrollbar-thumb-zinc-600 dark:scrollbar-track-zinc-800"></iframe>}
                             
                             <div className={`${modalContent.link ? "laptop:hidden" : ""} laptop:mt-2 w-full flex justify-center bg-zinc-900`} ref={imgRef}>
-                                <img src={modalContent.screen} alt={modalContent.screenAlt} className="tablet:max-h-[380px] laptop:max-h-[500px]"  />
+                                <img src={modalContent.screen} alt={modalContent.screenAlt} className="h-[200px] tablet:h-[380px]"  />
                             </div>
 
-                            <div className="w-full grid grid-cols-2 py-2 px-4 laptop:px-12 gap-2">
+                            <div className="w-full grid grid-cols-2 py-2 px-4 tablet:hidden laptop:px-12 gap-2">
                                     { modalContent.link && (
                                         <span className="w-full flex tablet:hidden justify-center gap-x-2 underline underline-offset-2 cursor-pointer hover:text-amber-400">
                                             <Link href={modalContent.link} target="_blank">
@@ -70,7 +70,8 @@ export function ProjectModal() {
                                     ) }
                             </div>
                             
-                            <div className="w-full px-4 laptop:px-12 py-4 tablet:pt-6 flex flex-col max-h-64 tablet:max-h-48 laptop:max-h-64 overflow-auto">
+                            <div className="w-full px-4 laptop:px-12 py-4 laptop:pt-6 flex flex-col max-h-64 tablet:max-h-48 laptop:max-h-64 overflow-scroll scrollbar-thumb-rounded-full scrollbar-thumb-zinc-300 scrollbar-track-white dark:scrollbar-thumb-zinc-600 dark:scrollbar-track-zinc-800 ">
+                                
                                 {projDescription.map((paragraph: string, i: number) => {
                                     return (
                                         <p key={i} className="mb-2 last:mb-0 text-sm laptop:text-base first:text-lg first:font-semibold first:mb-4">{paragraph}</p>

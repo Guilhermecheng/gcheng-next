@@ -59,6 +59,10 @@ export const projectsList = [
         screenAlt:"Screenshot do site Github Blog",
         link: "https://github-blog-kappa.vercel.app/",
         githubLink: "https://github.com/Guilhermecheng/github-blog",
+        stack: [
+            "react",
+            "typescript",
+        ]
     },
     {
         title: "Worldtrip",
@@ -81,6 +85,10 @@ export const projectsList = [
         screenAlt:"Screenshot do site Worldtrip",
         link: "https://worldtrip-ruby.vercel.app/",
         githubLink: "https://github.com/Guilhermecheng/worldtrip",
+        stack: [
+            "react",
+            "typescript",
+        ]
     },
     {
         title: "Spacetravelling",
@@ -102,6 +110,10 @@ export const projectsList = [
         screenAlt:"Screenshot do site Spacetravelling",
         link: "https://spacetravelling-omega.vercel.app/",
         githubLink: "https://github.com/Guilhermecheng/spacetravelling",
+        stack: [
+            "react",
+            "typescript",
+        ]
     },
     {
         title: "Todo",
@@ -125,6 +137,12 @@ export const projectsList = [
         screenAlt:"Screenshot do site todo",
         link: "https://todo-one-theta.vercel.app/",
         githubLink: "https://github.com/Guilhermecheng/todo",
+        stack: [
+            "react",
+            "typescript",
+            "tailwind",
+            "graphql",
+        ]
     },
     {
         title: "Guilherme Cheng",
@@ -144,7 +162,33 @@ export const projectsList = [
         imgAlt: "Thumbnail do site guilhermecheng.com.br",
         screen:"/guilherme-cheng-screen.png",
         screenAlt:"Screenshot do site guilhermecheng.com.br",
-        // link: "https://www.guilhermecheng.com.br/",
-        // githubLink: "",
-    }
+        githubLink: "https://github.com/Guilhermecheng/gcheng-next",
+        stack: [
+            "react",
+            "typescript",
+            "tailwind",
+            "next",
+            "graphql",
+        ]
+    },
+    {
+        title: "Dogs",
+        description: [
+            "Um instagram pra cachorro!",
+            
+        ],
+        descriptionEN:[
+            "A instagram for dogs!",
+            
+        ],
+        image: "/dogs-thumb.png",
+        imgAlt: "Thumbnail do site Dogs",
+        screen:"/dogs-screen.png",
+        screenAlt:"Screenshot do site Dogs",
+        link: "https://dogs-aa20f.web.app/",
+        githubLink: "https://github.com/Guilhermecheng/dogs",
+        stack: [
+            "react",
+        ],
+    },
 ]
