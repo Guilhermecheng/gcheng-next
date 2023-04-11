@@ -10,6 +10,13 @@ interface ModalContentProps {
 
 export const GlobalContext = createContext<any>({
     isModalOpen: false,
+    modalContent: {
+        title: "Guilherme Cheng",
+        description: "This website!",
+        image: "",
+        imgAlt: "",
+        link: ""
+    }
 });
 
 export const Contexts = (props: any) => {
@@ -17,7 +24,7 @@ export const Contexts = (props: any) => {
     const [language, setLanguage] = useState("ptBR"); // ptBR or EN
     const [darkModeChecked, setDarkModeChecked] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [modalContent, setModalContent] = useState<ModalContentProps | null>()
+    const [modalContent, setModalContent] = useState<ModalContentProps>()
 
 
     return (
