@@ -70,7 +70,7 @@ export function ProjectModal() {
                                     ) }
                             </div>
                             
-                            <div className="w-full px-4 laptop:px-12 py-4 laptop:pt-6 flex flex-col max-h-64 tablet:max-h-48 laptop:max-h-64 overflow-scroll scrollbar-thumb-rounded-full scrollbar-thumb-zinc-300 scrollbar-track-white dark:scrollbar-thumb-zinc-600 dark:scrollbar-track-zinc-800 ">
+                            <div className="w-full px-4 laptop:px-12 py-4 laptop:pt-6 flex flex-col max-h-64 tablet:max-h-48 laptop:max-h-64 overflow-auto scrollbar-thumb-rounded-full scrollbar-thumb-zinc-300 scrollbar-track-white dark:scrollbar-thumb-zinc-600 dark:scrollbar-track-zinc-800 ">
                                 
                                 {projDescription.map((paragraph: string, i: number) => {
                                     return (
