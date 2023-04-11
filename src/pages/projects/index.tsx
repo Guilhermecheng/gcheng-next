@@ -6,7 +6,10 @@ import { projectsList } from "@/data/projects";
 
 import { PageTitle } from "@/components/PageTitle";
 import { ProjectThumb } from "@/components/ProjectThumb";
+import { Thumb } from "@/components/Thumb";
 
+import * as Dialog from '@radix-ui/react-dialog'
+import { Modal } from "@/components/Modal";
 
 const projPageTitle = {
     ptBR: {
@@ -26,7 +29,7 @@ export default function Projects() {
 
     function onProjectClick(proj: any) {
         setModalContent(proj);
-        setIsModalOpen(true);
+        // setIsModalOpen(true);
       }
 
     return (
@@ -40,7 +43,25 @@ export default function Projects() {
                 subtitle={pageTitle.subtitle}
             />
 
+            <div className="grid grid-cols-2 mt-6 laptop:mt-8 tablet:grid-cols-3 gap-4 pb-12 laptop:pb-6">
+                <Dialog.Root>
+                    { projectsList.map((project, i) => {
+                    return (
+                        <Thumb 
+                            key={i}
+                            project={project}
+                            language={language}
+                            onClickFunction={onProjectClick}
+                        />
+                    )
+                    }) }
+                <Modal />
+                </Dialog.Root>
+            </div>
+{/* 
+
             <ul className="grid grid-cols-2 mt-6 laptop:mt-8 tablet:grid-cols-3 gap-4 pb-12 laptop:pb-6">
+                
                 { projectsList.map((project, i) => {
                 return (
                     <ProjectThumb 
@@ -52,6 +73,7 @@ export default function Projects() {
                 )
                 }) }
             </ul>
+             */}
         </div>
     )
 }
