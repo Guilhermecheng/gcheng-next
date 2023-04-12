@@ -6,6 +6,7 @@ import { IoClose } from 'react-icons/io5';
 import { BsBoxArrowUpRight, BsGithub } from 'react-icons/bs';
 
 import { GlobalContext } from '@/contexts/Contexts';
+import { StackBlock } from './StackBlock';
 
 
 export function Modal() {
@@ -19,7 +20,7 @@ export function Modal() {
 
             <Dialog.Content className='fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]'>
                 {modalContent ? (
-                    <div className='mt-4 flex flex-col rounded-md py-4 w-[80vw] max-w-[1000px] max-h-[90%] text-zinc-700 dark:text-zinc-200 bg-zinc-200 dark:bg-neutral-700'>
+                    <div className='mt-4 flex flex-col rounded-md py-4 w-[80vw] max-w-[1000px] max-h-[90vh] text-zinc-700 dark:text-zinc-200 bg-zinc-200 dark:bg-neutral-700'>
 
                         <section className='flex px-6'>
                             <span className="flex items-center gap-x-6 w-full">
@@ -69,12 +70,23 @@ export function Modal() {
                             </div>
                         </section>
 
-                        <section className='px-6 max-h-[40vh] overflow-auto scrollbar-thumb-rounded-full scrollbar-thumb-zinc-300 scrollbar-track-white dark:scrollbar-thumb-zinc-600 dark:scrollbar-track-zinc-800'>
+                        <section className='px-6 py-4 max-h-[40vh] overflow-auto scrollbar-thumb-rounded-full scrollbar-thumb-zinc-300 scrollbar-track-white dark:scrollbar-thumb-zinc-600 dark:scrollbar-track-zinc-800'>
                             {projDescription.map((paragraph: string, i: number) => {
                                 return (
                                     <p key={i} className="mb-2 last:mb-0 text-sm laptop:text-base first:text-lg first:font-semibold first:mb-4">{paragraph}</p>
                                 )
                             })}
+                        </section>
+
+                        <section className='px-6 mt-2'>
+                            {modalContent.stack.length > 0 && <h1 className='mb-2 text-lg font-semibold'>Stack do projeto:</h1>}
+                            <div className='flex flex-wrap gap-4'>
+                                {modalContent.stack.map((tech: string, i: number) => {
+                                    return (
+                                        <StackBlock stack={tech} />
+                                    )
+                                })}
+                            </div>
                         </section>
                     </div>
                 ) : (

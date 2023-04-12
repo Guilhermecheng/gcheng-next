@@ -5,7 +5,6 @@ import { GlobalContext } from "@/contexts/Contexts";
 import { projectsList } from "@/data/projects";
 
 import { PageTitle } from "@/components/PageTitle";
-import { ProjectThumb } from "@/components/ProjectThumb";
 import { Thumb } from "@/components/Thumb";
 
 import * as Dialog from '@radix-ui/react-dialog'
@@ -58,22 +57,6 @@ export default function Projects() {
                 <Modal />
                 </Dialog.Root>
             </div>
-{/* 
-
-            <ul className="grid grid-cols-2 mt-6 laptop:mt-8 tablet:grid-cols-3 gap-4 pb-12 laptop:pb-6">
-                
-                { projectsList.map((project, i) => {
-                return (
-                    <ProjectThumb 
-                        key={i}
-                        project={project}
-                        onClickFunction={onProjectClick}
-                        language={language}
-                    />
-                )
-                }) }
-            </ul>
-             */}
         </div>
     )
 }

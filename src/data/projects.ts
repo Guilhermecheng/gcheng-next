@@ -17,6 +17,10 @@ export const projectsList = [
         screenAlt:"Screenshot do site larissasilvestre.adv.br",
         link: "https://www.larissasilvestre.adv.br/",
         githubLink: "https://github.com/Guilhermecheng/lari-v2",
+        stack: [
+            "react",
+            "next",
+        ],
     },
     {
         title: "Gasolina Agora",
@@ -38,6 +42,10 @@ export const projectsList = [
         screen:"/gasol-website-screen.png",
         screenAlt:"Screenshot do site Gasolina agora",
         link: "https://gasolina-agora-website.vercel.app/",
+        stack: [
+            "react",
+            "tailwind",
+        ],
     },
     {
         title: "Github Blog",
@@ -174,12 +182,14 @@ export const projectsList = [
     {
         title: "Dogs",
         description: [
-            "Um instagram pra cachorro!",
-            
+            "Um instagram bom pra cachorro!",
+            "Um instagram para cachorros. Utilizada para estudar as funcionalidades do React, componentes e login.",
+            "Baseado no design de Origamid."
         ],
         descriptionEN:[
             "A instagram for dogs!",
-            
+            "A instagram platform, focused on dogs. Created as an excersice for studying React.",
+            "Original idea by Origamid."
         ],
         image: "/dogs-thumb.png",
         imgAlt: "Thumbnail do site Dogs",

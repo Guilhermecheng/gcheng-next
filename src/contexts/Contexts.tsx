@@ -6,6 +6,7 @@ interface ModalContentProps {
     image: string;
     imgAlt: string;
     link: string;
+    stack: string[]
 }
 
 export const GlobalContext = createContext<any>({
@@ -15,7 +16,8 @@ export const GlobalContext = createContext<any>({
         description: ["This website!"],
         image: "",
         imgAlt: "",
-        link: ""
+        link: "",
+        stack: []
     }
 });
 
@@ -29,7 +31,8 @@ export const Contexts = (props: any) => {
         description: ["This website!"],
         image: "",
         imgAlt: "",
-        link: ""
+        link: "",
+        stack: []
     })
 
 
