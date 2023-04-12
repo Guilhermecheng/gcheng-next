@@ -45,7 +45,7 @@ export function Modal() {
                         </section>
 
                         <section className='my-2'>
-                            {modalContent.link && <iframe src={modalContent.link} className="w-full min-h-[50vh] rounded-md hidden laptop:block"></iframe>}
+                            {modalContent.link && <iframe src={modalContent.link} className="w-full min-h-[45vh] rounded-md hidden laptop:block"></iframe>}
                             
                             <div className={`${modalContent.link ? "laptop:hidden" : ""} laptop:mt-2 w-full flex justify-center bg-zinc-900`} ref={imgRef}>
                                 <img src={modalContent.screen} alt={modalContent.screenAlt} className="h-[200px] tablet:h-[380px]"  />
@@ -70,7 +70,7 @@ export function Modal() {
                             </div>
                         </section>
 
-                        <section className='px-6 pt-4 mb-2 max-h-[40vh] overflow-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-zinc-300 scrollbar-track-white dark:scrollbar-thumb-zinc-600 dark:scrollbar-track-zinc-800'>
+                        <section className='px-6 pt-4 mb-2 max-h-[40vh] overflow-auto scrollbar-thin scrollbar-thumb-zinc-300 scrollbar-track-white dark:scrollbar-thumb-zinc-600 dark:scrollbar-track-zinc-800'>
                             {projDescription.map((paragraph: string, i: number) => {
                                 return (
                                     <p key={i} className="mb-2 last:mb-0 text-sm laptop:text-base first:text-xl first:laptop:text-lg first:font-semibold first:mb-4">{paragraph}</p>
