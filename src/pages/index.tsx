@@ -9,16 +9,18 @@ import { projectsList } from "@/data/projects";
 import { GlobalContext } from "@/contexts/Contexts";
 
 import { SectionTitle } from "@/components/SectionTitle";
-import { ProjectThumb } from "@/components/ProjectThumb";
+
+import * as Dialog from "@radix-ui/react-dialog";
+import { ProjectProps, Thumb } from "@/components/Thumb";
+import { Modal } from "@/components/Modal";
 
 export default function Home() {
-  const { language, setIsModalOpen, setModalContent, isModalOpen } = useContext(GlobalContext);
+  const { language, setModalContent } = useContext(GlobalContext);
 
   let pageContent = language === "ptBR" ? homeContent.ptBR : homeContent.en;
 
-  function onProjectClick(proj: any) {
+  function onProjectClick(proj: ProjectProps) {
     setModalContent(proj);
-    setIsModalOpen(true);
   }
 
   return (
@@ -27,7 +29,7 @@ export default function Home() {
         <title>Home | Guilherme Cheng</title>
       </Head>
 
-      <div className={`text-zinc-500 dark:text-white w-full flex flex-col ${isModalOpen && "h-full overflow-y-hidden"}`}>
+      <div className={`text-zinc-500 dark:text-white w-full flex flex-col`}>
 
         <div id="logo-and-title" className="w-full flex flex-col align-center">
           <div className="flex w-full justify-center laptop:justify-start">
@@ -69,18 +71,21 @@ export default function Home() {
             <p className="laptop:hidden">Click on the desired project to see more</p>
            )}
 
-          <ul className="grid grid-cols-2 mt-6 tablet:grid-cols-3 gap-4">
-            { projectsList.slice(0, 3).map((project, i) => {
-              return (
-                <ProjectThumb
-                  key={i}
-                  project={project}
-                  onClickFunction={onProjectClick}
-                  language={language}
-                />
-              )
-            }) }
-          </ul>
+          <div className="grid grid-cols-2 mt-6 tablet:grid-cols-3 gap-4">
+            <Dialog.Root>
+                { projectsList.slice(0, 3).map((project, i) => {
+                return (
+                    <Thumb
+                        key={i}
+                        project={project}
+                        language={language}
+                        onClickFunction={onProjectClick}
+                    />
+                )
+                }) }
+              <Modal />
+            </Dialog.Root>
+          </div>
 
           <div className="min-h-10 mt-6 w-full flex justify-end pb-6 laptop:pb-4">
             <Link href="/projects">

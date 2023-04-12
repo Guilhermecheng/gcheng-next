@@ -2,7 +2,7 @@ import { BiSearchAlt } from "react-icons/bi";
 import * as Dialog from '@radix-ui/react-dialog'
 
 
-interface ProjectProps {
+export interface ProjectProps {
     title: string;
     description: string[];
     descriptionEN: string[];

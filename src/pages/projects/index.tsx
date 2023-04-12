@@ -5,7 +5,7 @@ import { GlobalContext } from "@/contexts/Contexts";
 import { projectsList } from "@/data/projects";
 
 import { PageTitle } from "@/components/PageTitle";
-import { Thumb } from "@/components/Thumb";
+import { ProjectProps, Thumb } from "@/components/Thumb";
 
 import * as Dialog from '@radix-ui/react-dialog'
 import { Modal } from "@/components/Modal";
@@ -22,17 +22,16 @@ const projPageTitle = {
 }
 
 export default function Projects() {
-    const {language, setIsModalOpen, setModalContent, isModalOpen } = useContext(GlobalContext);
+    const {language, setModalContent } = useContext(GlobalContext);
 
     let pageTitle = language === "ptBR" ? projPageTitle.ptBR : projPageTitle.en;
 
-    function onProjectClick(proj: any) {
+    function onProjectClick(proj: ProjectProps) {
         setModalContent(proj);
-        // setIsModalOpen(true);
       }
 
     return (
-        <div className={`${isModalOpen && "h-full overflow-y-hidden"}`}>
+        <>
             <Head>
                 <title>{`${pageTitle.title} | Guilherme Cheng`}</title>
             </Head>
@@ -57,6 +56,6 @@ export default function Projects() {
                 <Modal />
                 </Dialog.Root>
             </div>
-        </div>
+        </>
     )
 }
