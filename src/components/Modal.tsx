@@ -70,15 +70,15 @@ export function Modal() {
                             </div>
                         </section>
 
-                        <section className='px-6 py-4 max-h-[40vh] overflow-auto scrollbar-thumb-rounded-full scrollbar-thumb-zinc-300 scrollbar-track-white dark:scrollbar-thumb-zinc-600 dark:scrollbar-track-zinc-800'>
+                        <section className='px-6 pt-4 mb-2 max-h-[40vh] overflow-auto scrollbar-thumb-rounded-full scrollbar-thumb-zinc-300 scrollbar-track-white dark:scrollbar-thumb-zinc-600 dark:scrollbar-track-zinc-800'>
                             {projDescription.map((paragraph: string, i: number) => {
                                 return (
-                                    <p key={i} className="mb-2 last:mb-0 text-sm laptop:text-base first:text-lg first:font-semibold first:mb-4">{paragraph}</p>
+                                    <p key={i} className="mb-2 last:mb-0 text-sm laptop:text-base first:text-xl first:laptop:text-lg first:font-semibold first:mb-4">{paragraph}</p>
                                 )
                             })}
                         </section>
 
-                        <section className='px-6 mt-2'>
+                        <section className='mx-6 mt-2 bg-zinc-200 dark:bg-zinc-800 pt-2 pb-4 px-4 rounded-md'>
                             {modalContent.stack.length > 0 && <h1 className='mb-2 text-lg font-semibold'>Stack do projeto:</h1>}
                             <div className='flex flex-wrap gap-4'>
                                 {modalContent.stack.map((tech: string, i: number) => {
