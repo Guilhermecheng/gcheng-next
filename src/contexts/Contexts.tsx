@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 interface ModalContentProps {
     title: string;
     description: string[];
+    descriptionEN: string[];
     image: string;
     imgAlt: string;
     link: string;
@@ -13,7 +14,8 @@ export const GlobalContext = createContext<any>({
     isModalOpen: false,
     modalContent: {
         title: "Guilherme Cheng",
-        description: ["This website!"],
+        description: ["Este website!"],
+        descriptionEN: ["This website!"],
         image: "",
         imgAlt: "",
         link: "",
@@ -28,7 +30,8 @@ export const Contexts = (props: any) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalContent, setModalContent] = useState<ModalContentProps>({
         title: "Guilherme Cheng",
-        description: ["This website!"],
+        description: ["Este website!"],
+        descriptionEN: ["This website!"],
         image: "",
         imgAlt: "",
         link: "",
