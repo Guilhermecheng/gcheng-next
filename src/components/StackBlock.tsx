@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import * as Tooltip from '@radix-ui/react-tooltip';
 
 export interface TechProps {
     name: string;
@@ -127,14 +128,25 @@ export function StackBlock({stack}: StackBlockProps) {
     console.log(technologyUsed)
 
     return (
-        <div className="">
-            <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="flex items-center justify-center bg-zinc-400 dark:bg-zinc-500 p-2 h-10 rounded-md text-zinc-600 dark:text-white overflow-hidden"
-            >
-                <img src={technologyUsed.image} alt={technologyUsed.name} className="w-[24px] h-[24px] " />
-            </motion.div>
-        </div>
+        <Tooltip.Provider>
+            <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                    <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        className="flex items-center justify-center bg-zinc-400 dark:bg-zinc-500 p-2 h-10 rounded-md text-zinc-600 dark:text-white overflow-hidden"
+                    >
+                        <img src={technologyUsed.image} alt={technologyUsed.name} className="w-[24px] h-[24px] " />
+                    </motion.div>
+                </Tooltip.Trigger>
+
+                <Tooltip.Portal>
+                    <Tooltip.Content className="bg-zinc-600 px-2 py-2 rounded-md text-zinc-100 text-sm border-none">
+                        {technologyUsed.name}
+                        <Tooltip.Arrow fill="rgb(82 82 91)" />
+                    </Tooltip.Content>
+                </Tooltip.Portal>
+            </Tooltip.Root>
+        </Tooltip.Provider>
     )
 }
