@@ -129,7 +129,7 @@ export function StackBlock({stack}: StackBlockProps) {
 
     return (
         <Tooltip.Provider>
-            <Tooltip.Root>
+            <Tooltip.Root delayDuration={250}>
                 <Tooltip.Trigger asChild>
                     <motion.div
                         whileHover={{ scale: 1.1 }}
