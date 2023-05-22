@@ -5,7 +5,11 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 //@ts-ignore
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { ParsedUrlQuery } from 'querystring'
 
+interface IParams extends ParsedUrlQuery {
+  slug: string
+}
 
 export default function Post({ postData, username, slug }: any) {
 
@@ -44,7 +48,7 @@ export default function Post({ postData, username, slug }: any) {
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     const username = 'guilhermecheng'
-    const { slug } = params;
+    const { slug } = params as IParams;
 
     const response = await axios.get(`https://dev.to/api/articles/${username}/${slug}`)
     console.log(response)
