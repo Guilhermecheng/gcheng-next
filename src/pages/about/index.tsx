@@ -57,7 +57,7 @@ export default function AboutPage() {
 
                     </div>
                     <span onClick={toggleHabilities} className="mt-4 w-full laptop:text-end cursor-pointer hover:underline hover:underline-offset-1 text-zinc-600 dark:text-zinc-100 ">
-                        <span className="flex gap-x-2 justify-center laptop:justify-end items-cente r">
+                        <span className="flex gap-x-2 justify-center laptop:justify-end items-center">
                             { language === "ptBR" ? "Mostrar todas": "Show all" }
                             <RiArrowDownSLine size={24} className={`transition-all ease-in-out ${isHabilitiesOpen && "rotate-180"}`} />
                         </span>

@@ -41,7 +41,7 @@ export default function Contact() {
                     <SectionTitle title={language === "ptBR" ? `Minhas redes sociais` : `My social network`} />
                     <SocialMediaList darkModeChecked={darkModeChecked} />
 
-                    <SectionTitle title={language === "ptBR" ? `Deixe sua mensagem` : `Leave a message`} />
+                    <SectionTitle title={language === "ptBR" ? `Deixe sua mensagem!` : `Leave a message!`} />
                     <Form />
                 </section>
             </div>
