@@ -115,8 +115,6 @@ export const aboutPageContent = {
             {
                 name: "ReactJS",
                 image: "/react.svg",
-                // image: <img src="/react.svg" alt="React" width={50} height={50} />,
-
             },
             {
                 name: "NextJS",
@@ -129,6 +127,14 @@ export const aboutPageContent = {
             {
                 name: "TailwindCSS",
                 image: "/tailwindcss.svg",
+            },
+            {
+                name: "Styled Components",
+                image: "/styled-components.svg",
+            },
+            {
+                name: "GraphQL",
+                image: "/graphql.svg",
             },
             {
                 name: "Javascript",

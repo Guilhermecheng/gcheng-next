@@ -72,6 +72,58 @@ export const projectsList = [
             "typescript",
         ]
     },
+    // {
+    //     title: "Caputeeno",
+    //     description: [
+    //         "Um e-commerce para venda de canecas e camisetas",
+    //         "A ideia do projeto é trabalhar as funcionalidades principais de um e-commerce, como filtrar por categorias, buscar itens, adicionar e retirar itens do carrinho e finalizar a compra. ",
+    //         "Utiliza uma API GraphQL como backend e também o localhost para gerenciamento do carrinho. ",
+    //         "Obs: ainda em construção"
+    //     ],
+    //     descriptionEN:[
+    //         "An e-commerce to sell coffee mugs and shirts.",
+    //         "The idea of the project is to work on the main functionalities of an e-commerce, such as filtering by categories, searching for items, adding and removing items from the cart and completing the purchase.",
+    //         "Uses a GraphQL API as a backend and also localhost for cart management.",
+    //         "Ps: under maintenance"
+    //     ],
+    //     image: "/caputeeno-thumb.png",
+    //     imgAlt: "thumbnail do projeto caputeeno",
+    //     screen:"/spacetravelling-screen.png",
+    //     screenAlt:"Screenshot do site caputeeno",
+    //     link: "https://caputeeno.vercel.app/",
+    //     githubLink: "https://github.com/Guilhermecheng/caputeeno",
+    //     stack: [
+    //         "react",
+    //         "typescript",
+    //         "styled_components",
+    //         "graphql",
+    //     ]
+    // },
+    {
+        title: "DT Money",
+        description: [
+            "Uma plataforma de controle de gastos",
+            "A ideia do projeto é uma plataforma para gerenciamento de seus gastos pessoais. Você pode reportar as entradas e saídas, ver o saldo final e buscar itens.",
+            "Aplicação construída utilizando React, Typescript e Styled components.",
+        ],
+        descriptionEN:[
+            "An expense control platform",
+            "The idea of the project is a platform for managing your personal expenses. You can report the ins and outs, see the final balance and search for items.",
+            "Application built using React, Typescript and Styled components",
+           
+        ],
+        image: "/dt-money-thumb.png",
+        imgAlt: "thumbnail do projeto  DT Money",
+        screen:"/spacetravelling-screen.png",
+        screenAlt:"Screenshot do site DT Money",
+        link: "https://dt-money-gray.vercel.app/",
+        githubLink: "https://github.com/Guilhermecheng/dt-money",
+        stack: [
+            "react",
+            "typescript",
+            "styled_components",
+        ]
+    },
     {
         title: "Worldtrip",
         description: [
