@@ -45,7 +45,7 @@ export function Modal() {
                         </section>
 
                         <section className='my-2'>
-                            {modalContent.link && <iframe src={modalContent.link} className="w-full min-h-[45vh] rounded-md hidden laptop:block"></iframe>}
+                            {modalContent.link && <iframe src={modalContent.link} className="w-full min-h-[45vh] rounded-md hidden laptop:block bg-white"></iframe>}
                             
                             <div className={`${modalContent.link ? "laptop:hidden" : ""} laptop:mt-2 w-full flex justify-center bg-zinc-900`} ref={imgRef}>
                                 <img src={modalContent.screen} alt={modalContent.screenAlt} className="h-[200px] tablet:h-[380px]"  />

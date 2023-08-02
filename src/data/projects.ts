@@ -1,5 +1,29 @@
 export const projectsList = [
     {
+        title: "CoinSynch",
+        description: [
+            'Uma plataforma crypto!',
+            'CoinSynch é a plataforma perfeita para você hostear sua carteira crypto. Além da possibilidade de acompanhar o preço das top moedas do mercado, é possível também adicionar novas moedas, e negociá-las.',
+            'O projeto foi construído com NextJS 13.4, Tailwind, e utilizando-se da API da CoinCap para obter os preços das moedas e o Next Server para atuar como o servidor que entrega os dados dos usuários.'
+        ],
+        descriptionEN:[
+            'A Crypto Platform!',
+            'CoinSynch is the perfect platform for you to host your crypto wallet. In addition to the ability to track the prices of the top coins in the market, you can also add new coins and trade them.',
+            'The project was built with NextJS 13.4, Tailwind, and using the CoinCap API to obtain coin prices, with Next Server acting as the server that delivers user data.',
+        ],
+        image: "/coinsynch-thumb.png",
+        imgAlt: "thumbnail do site CoinSynch",
+        screen:"/coinsynch-screen.png",
+        screenAlt:"Screenshot do site CoinSynch",
+        link: "https://coinsynch-gamma.vercel.app/",
+        githubLink: "https://github.com/Guilhermecheng/coinsynch",
+        stack: [
+            "react",
+            "typescript",
+            "tailwind",
+        ]
+    },
+    {
         title: "Larissa Silvestre",
         description: [
             "Website para um escritório de advocacia.",
@@ -70,6 +94,7 @@ export const projectsList = [
         stack: [
             "react",
             "typescript",
+            "tailwind",
         ]
     },
     // {
