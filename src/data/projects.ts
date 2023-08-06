@@ -20,6 +20,7 @@ export const projectsList = [
         stack: [
             "react",
             "typescript",
+            "next",
             "tailwind",
         ]
     },
@@ -120,6 +121,7 @@ export const projectsList = [
     //     stack: [
     //         "react",
     //         "typescript",
+    //         "next",
     //         "styled_components",
     //         "graphql",
     //     ]
