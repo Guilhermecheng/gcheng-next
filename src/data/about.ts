@@ -110,7 +110,7 @@ export const aboutPageContent = {
     },
     habilities: {
         titlePTBR: "Habilidades",
-        titleEN: "Habilities",
+        titleEN: "Skills",
         list: [
             {
                 name: "ReactJS",
