@@ -1,15 +1,20 @@
 import Head from "next/head";
 import { useContext, useState } from "react";
 
+import client from "@/services/apolloClient";
+
 import { GlobalContext } from "@/contexts/Contexts";
 import { aboutPageContent } from "@/data/about";
 import { PageTitle } from "@/components/PageTitle";
 import { SectionTitle } from "@/components/SectionTitle";
 import ScaleUp from "@/components/ScaleUp";
+import { ExperienceTabs } from "@/components/ExperienceTabs";
 
 import { RiArrowDownSLine } from "react-icons/ri";
+import { GET_ALL_SKILLS } from "@/queries/getAllSkills";
 
-export default function AboutPage() {
+export default function AboutPage(props: any) {
+    console.log(props)
     const { language } = useContext(GlobalContext);
     const [isHabilitiesOpen, setIsHabilitiesOpen] = useState(false);
     let pageContent = language === "ptBR" ? aboutPageContent.ptBR : aboutPageContent.en;
@@ -89,7 +94,28 @@ export default function AboutPage() {
                         
                     </ul>
                 </section>
+
+                <ExperienceTabs experience={pageContent.experience} />
             </div>
         </>
     )
+}
+
+export async function getStaticProps({ params }: any) {
+    try {
+        const { data } = await client.query({ query: GET_ALL_SKILLS });
+        console.log(data)
+
+        return {
+            props: {
+                skillItems: data.skillItems
+            }
+        }
+    } catch (err) {
+        console.log(err)
+
+        return {
+            props: null,
+        }
+    }
 }
