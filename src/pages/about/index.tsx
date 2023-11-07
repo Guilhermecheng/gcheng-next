@@ -13,6 +13,15 @@ import { ExperienceTabs } from "@/components/ExperienceTabs";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { GET_ALL_SKILLS } from "@/queries/getAllSkills";
 
+interface skillProps {
+    id: string;
+    skillName: string;
+    skillSlugId: string;
+    skillImage: {
+        url: string;
+    };
+}[];
+
 export default function AboutPage(props: any) {
     console.log(props)
     const { language } = useContext(GlobalContext);
@@ -67,32 +76,6 @@ export default function AboutPage(props: any) {
                             <RiArrowDownSLine size={24} className={`transition-all ease-in-out ${isHabilitiesOpen && "rotate-180"}`} />
                         </span>
                     </span>
-                </section>
-
-                <section className="text-zinc-500 dark:text-zinc-100">
-                    <SectionTitle title={pageContent.experience.title} />
-                    <ul className="mt-4">
-                        
-                        { pageContent.experience.expHistory.map((exp, i) => {
-                            return (
-                                <li key={i} className="mb-8 border-l-2 border-amber-400 px-8 relative">
-                                    <div className="flex flex-col tablet:flex-row tablet:gap-x-4">
-                                        <h1 className="text-xl laptop:text-2xl font-semibold italic">{exp.title}</h1>
-                                        <span className="text-sm laptop:text-md font-semibold text-zinc-400 mt-0 tablet:mt-2">{exp.company}</span>
-                                    </div>
-                                    { language === "ptBR" ? (
-                                        <p className="text-sm text-zinc-400 ">de {exp.timeFrom} até {exp.timeTo}</p>
-                                    ) : (
-                                        <p className="text-sm text-zinc-400 ">from {exp.timeFrom} to {exp.timeTo}</p>
-                                    ) }
-                                    <ul className="mt-2 pl-2">
-                                        { exp.tasks.map( (item, i) =>  <li key={i} className="text-sm laptop:text-base mb-2 last:mb-0 list-disc">{item}</li>  ) }
-                                    </ul>
-                                </li>
-                            )
-                        }) }
-                        
-                    </ul>
                 </section>
 
                 <ExperienceTabs experience={pageContent.experience} />

@@ -1,14 +1,37 @@
 import Head from "next/head";
 import { useContext } from "react";
 
+import client from "@/services/apolloClient";
+
+
 import { GlobalContext } from "@/contexts/Contexts";
 import { projectsList } from "@/data/projects";
 
 import { PageTitle } from "@/components/PageTitle";
 import { ProjectProps, Thumb } from "@/components/Thumb";
+import { Modal } from "@/components/Modal";
 
 import * as Dialog from '@radix-ui/react-dialog'
-import { Modal } from "@/components/Modal";
+import { GET_ALL_PROJECTS } from "@/queries/getAllProjects";
+
+interface ProjectsProps {
+    data: {
+        portifolioProjects: {
+            id: string; 
+            linkToPage: string; 
+            linkToRepository: string; 
+            projectBrief: string; 
+            projectBriefPortuguese: string; 
+            projectDescription: string; 
+            projectDescriptionPortuguese: string; 
+            projectName: string; 
+            skillsUsed: string[];
+            projectThumb: {
+                url: string;
+            }
+        }[];
+    }
+}
 
 const projPageTitle = {
     ptBR: {
@@ -21,8 +44,10 @@ const projPageTitle = {
     },
 }
 
-export default function Projects() {
+export default function Projects(props: ProjectsProps) {
     const {language, setModalContent } = useContext(GlobalContext);
+
+    console.log(props)
 
     let pageTitle = language === "ptBR" ? projPageTitle.ptBR : projPageTitle.en;
 
@@ -58,4 +83,23 @@ export default function Projects() {
             </div>
         </>
     )
+}
+
+export async function getStaticProps({ params }: any) {
+    try {
+        const { data } = await client.query({ query: GET_ALL_PROJECTS });
+        console.log(data)
+
+        return {
+            props: {
+                data
+            }
+        }
+    } catch (err) {
+        console.log(err)
+
+        return {
+            props: null,
+        }
+    }
 }

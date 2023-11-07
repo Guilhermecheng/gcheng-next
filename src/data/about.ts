@@ -21,7 +21,7 @@ export const aboutPageContent = {
             expHistory: [
                 {
                     title: "Frontend developer",
-                    company: "Guilherme Cheng",
+                    company: "Insight | Viveo",
                     timeFrom: "Jan 2022",
                     timeTo: "Atualmente",
                     tasks: [
@@ -35,7 +35,7 @@ export const aboutPageContent = {
                     title: "Business Analyst",
                     company: "Accenture",
                     timeFrom: "Jul 2022",
-                    timeTo: "Atualmente",
+                    timeTo: "Out 23",
                     tasks: [
                         "Manter a qualidade e padrão de serviço da equipe de processamento de reclamações de garantia no suporte contratado do Acordo de Nível de Serviço.",
                         "Investigar e verificar reclamações de garantia com base nos recursos de suporte externo disponíveis (catálogo de peças, assistência ao revendedor e tempo de trabalho padrão) e tomar a decisão apropriada.",
@@ -75,7 +75,7 @@ export const aboutPageContent = {
             expHistory: [
                 {
                     title: "Frontend developer",
-                    company: "Guilherme Cheng",
+                    company: "Insight | Viveo",
                     timeFrom: "Jan 2022",
                     timeTo: "Today",
                     tasks: [
@@ -88,7 +88,7 @@ export const aboutPageContent = {
                     title: "Business Analyst",
                     company: "Accenture",
                     timeFrom: "Jul 22",
-                    timeTo: "Today",
+                    timeTo: "Oct 23",
                     tasks: [
                         "Manter a qualidade e padrão de serviço da equipe de processamento de reclamações de garantia no suporte contratado do Acordo de Nível de Serviço.",
                         "Investigar e verificar reclamações de garantia com base nos recursos de suporte externo disponíveis (catálogo de peças, assistência ao revendedor e tempo de trabalho padrão) e tomar a decisão apropriada.",
