@@ -54,13 +54,11 @@ export const projectsList = [
             "O Gasolina Agora é um projeto que surgiu em 2022, por dois desenvolvedores, ávidos a trazer uma melhor divulgação de informações a todos os usuários.",
             "O site foi criado com o objetivo de facilitar o acesso ao preço atualizado dos combustíveis. Utilizando como base os dados fornecidos pela ANP, é possível encontrar a média de preço em para cada tipo de combustível, em qualquer cidade do Brasil.",
             "Além da plataforma, existe também a extensão para o navegador Chrome.",
-            "PS: site ainda em desenvolvimento."
         ],
         descriptionEN:[
             "Fuel price updated, anywhere and anytime.",
             "Website created to ease access to the updated price of the main fuel types in Brazil. It is possible to see the medium price of the week for each kind of fuel, in any of the capital cities of Brazil.",
             "There's also a chrome extension available.",
-            "PS: site in development."
         ],
         image: "/gasolina-agora-thumb.png",
         imgAlt: "thumbnail do site gasolina agora",
