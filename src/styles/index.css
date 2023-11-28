@@ -84,10 +84,10 @@ button {
 .blog-content h2::after {
   content: "";
   display: block;
-  height: 2px;
+  height: 1px;
   width: 100%;
-  background-color: #c1c1c1;
-  opacity: 0.4;
+  background-color: #a1a1a1;
+  opacity: 0.3;
   margin-top: 16px;
 }
 

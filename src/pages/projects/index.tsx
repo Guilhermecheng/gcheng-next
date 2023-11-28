@@ -85,7 +85,7 @@ export default function Projects(props: ProjectsProps) {
     )
 }
 
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps() {
     try {
         const { data } = await client.query({ query: GET_ALL_PROJECTS });
         console.log(data)

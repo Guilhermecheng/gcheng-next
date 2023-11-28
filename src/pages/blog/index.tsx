@@ -1,36 +1,51 @@
 import { PageTitle } from "@/components/PageTitle";
 import axios from "axios";
 import Head from "next/head";
-import { BsFillPersonFill, BsClockFill } from "react-icons/bs";
-import { AiFillTags } from "react-icons/ai";
+import { BsFillPersonFill, BsClockFill, BsCalendar3 } from "react-icons/bs";
 import Link from "next/link";
+
+interface Article {
+    type_of: string;
+    id: number;
+    title: string;
+    description: string;
+    readable_publish_date: string;
+    slug: string;
+    path: string;
+    url: string;
+    comments_count: number;
+    public_reactions_count: number;
+    collection_id: null | number;
+    published_timestamp: string;
+    positive_reactions_count: number;
+    cover_image: string | null;
+    social_image: string;
+    canonical_url: string;
+    created_at: string;
+    edited_at: string | null;
+    crossposted_at: string | null;
+    published_at: string;
+    last_comment_at: string;
+    reading_time_minutes: number;
+    tag_list: string[];
+    tags: string;
+    body_html: string;
+    body_markdown: string;
+    user: {
+        name: string;
+        username: string;
+        twitter_username: string | null;
+        github_username: string;
+        user_id: number;
+        website_url: string | null;
+        profile_image: string;
+        profile_image_90: string;
+    };
+}
 
 interface BlogProps {
     username: string;
-    blogPosts: {
-        type_of: string;
-        id: number;
-        title: string;
-        description: string;
-        readable_publish_date: string;
-        slug: string;
-        path:string;
-        url: string;
-        comments_count: number;
-        public_reactions_count: number;
-        collection_id: string,
-        published_timestamp: string;
-        positive_reactions_count: number;
-        cover_image: string,
-        social_image: string;
-        canonical_url: string;
-        created_at: string;
-        edited_at: string,
-        crossposted_at: string,
-        published_at: string;
-        last_comment_at: string;
-        reading_time_minutes: number;
-    }[]
+    blogPosts: Article[]
 }
 
 export default function Blog(props: BlogProps) {
@@ -42,11 +57,10 @@ export default function Blog(props: BlogProps) {
 
             <PageTitle
                 title={`Blog`}
-                // subtitle={`My space to share ideas and thoughts to the world!`}
             />
 
             <section className='w-full mt-10'>
-                {props.blogPosts.map((post: any, i: number) => {
+                {props.blogPosts.map((post: Article, i: number) => {
                     return (
                         <Link key={i} href={`/blog/${post.slug}`} className='group flex flex-col w-full text-zinc-700 dark:text-white bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-900 dark:hover:bg-zinc-700 mb-4 rounded-md cursor-pointer'>
                             { post.cover_image && (
@@ -56,21 +70,21 @@ export default function Blog(props: BlogProps) {
                             ) }
                             
                             <div className="flex-col px-6 py-4">
-                                <h1 className="text-zinc-900 dark:text-amber-400 font-semibold text-xl mb-4">{post.title}</h1>
+                                <h1 className="text-zinc-700 dark:text-amber-400 font-semibold text-xl mb-4">{post.title}</h1>
                                 <p className="mb-2">{post.description}</p>
 
-                                <div className="flex text-zinc-600 dark:text-zinc-400">
+                                <div className="flex text-zinc-500 dark:text-zinc-400">
                                     <div className="flex items-center gap-x-2 mr-6 ">
-                                        <BsFillPersonFill size={16} />
+                                        <BsFillPersonFill size={16} className="text-zinc-700 dark:text-amber-400" />
                                         <span>{props.username}</span>
                                     </div>
                                     <div className="flex items-center gap-x-2 mr-6 ">
-                                        <BsClockFill size={16} />
-                                        <span className="">created at: </span>
+                                        <BsCalendar3 size={16} className="text-zinc-700 dark:text-amber-400" />
+                                        <span className="">created at: {post.readable_publish_date}</span>
                                     </div>
                                     <div className="flex items-center gap-x-2">
-                                        <AiFillTags size={16} />
-                                        <span>tags:</span>
+                                        <BsClockFill size={16} className="text-zinc-700 dark:text-amber-400" />
+                                        <span>Reading time:  {post.reading_time_minutes} minutes</span>
                                     </div>
                                 </div>
                             </div>
@@ -82,10 +96,9 @@ export default function Blog(props: BlogProps) {
     )
 }
 
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps() {
     const username = 'guilhermecheng'
     let response = await axios.get(`https://dev.to/api/articles?username=${username}`)
-    console.log(response)
 
     let blogPosts = response.data;
     return {

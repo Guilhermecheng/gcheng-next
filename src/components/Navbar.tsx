@@ -117,12 +117,12 @@ export function Navbar() {
             textEN: "Contact",
             textPTBR: "Contato",
         },
-        // {
-        //     id: "blog",
-        //     href: "/blog",
-        //     textEN: "Blog",
-        //     textPTBR: "Blog",
-        // },
+        {
+            id: "blog",
+            href: "/blog",
+            textEN: "Blog",
+            textPTBR: "Blog",
+        },
     ]
 
     return (
