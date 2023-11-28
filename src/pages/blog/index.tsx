@@ -73,7 +73,7 @@ export default function Blog(props: BlogProps) {
                                 <h1 className="text-zinc-700 dark:text-amber-400 font-semibold text-xl mb-4">{post.title}</h1>
                                 <p className="mb-2">{post.description}</p>
 
-                                <div className="flex text-zinc-500 dark:text-zinc-400">
+                                <div className="flex flex-col laptop:flex-row text-xs gap-y-1 laptop:gap-y-0 tablet:text-base text-zinc-500 dark:text-zinc-400">
                                     <div className="flex items-center gap-x-2 mr-6 ">
                                         <BsFillPersonFill size={16} className="text-zinc-700 dark:text-amber-400" />
                                         <span>{props.username}</span>

@@ -73,7 +73,6 @@ export function Navbar() {
     }, [])
 
     function setDarkModeAtPage(checked: boolean) {
-        // const isDarkMode = document.documentElement.classList.contains("dark");
         if(checked) {
             setDarkModeChecked(false);
             document.documentElement.classList.remove("dark");
@@ -99,12 +98,6 @@ export function Navbar() {
             textEN: "About",
             textPTBR: "Sobre",
         },
-        // {
-        //     id: "skills",
-        //     href: "/skills",
-        //     textEN: "Skills / Exp",
-        //     textPTBR: "Skills",
-        // },
         {
             id: "projects",
             href: "/projects",
@@ -181,7 +174,6 @@ export function Navbar() {
 
                 <div id="inspirational-phrase" className="mt-6 pb-6 laptop:pb-0 laptop:mt-12 text-zinc-500 dark:text-zinc-300 relative">
                     <p className="italic">
-                        {/* Lorem, the famous ipsum! */}
                         { phrase && phrase.phrase }
                     </p>
                     <p className="absolute right-0 font-semibold">
@@ -205,7 +197,6 @@ export function Navbar() {
                     </Switch.Thumb>
                 </Switch.Root>
 
-                {/* <div id="language" className="absolute bottom-10 hidden laptop:block text-zinc-500 dark:text-zinc-100"> */}
                 <div id="language" className="absolute bottom-14 hidden laptop:block text-zinc-500 dark:text-zinc-100">
                     <span>Language: <span>{ language === "ptBR" ? (
                         <span className="cursor-pointer text-zinc-800 dark:text-amber-400 hover:underline hover:underline-offset-1" onClick={() => setLanguage("EN")}>BR</span>
