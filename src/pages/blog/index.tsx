@@ -59,32 +59,36 @@ export default function Blog(props: BlogProps) {
                 title={`Blog`}
             />
 
-            <section className='w-full mt-10'>
+            <section className='w-full mt-10 laptop:grid laptop:grid-cols-2 laptop:gap-4'>
                 {props.blogPosts.map((post: Article, i: number) => {
                     return (
                         <Link key={i} href={`/blog/${post.slug}`} className='group flex flex-col w-full text-zinc-700 dark:text-white bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-900 dark:hover:bg-zinc-700 mb-4 rounded-md cursor-pointer'>
                             { post.cover_image && (
-                                    <div className="h-20 overflow-hidden rounded-t-md group-hover:opacity-60">
-                                        <img src={post.cover_image}  />
+                                    <div className="h-40 overflow-hidden rounded-t-md group-hover:opacity-60">
+                                        <img 
+                                            src={post.cover_image} 
+                                            alt={post.title} 
+                                        />
                                     </div>
                             ) }
                             
-                            <div className="flex-col px-6 py-4">
-                                <h1 className="text-zinc-700 dark:text-amber-400 font-semibold text-xl mb-4">{post.title}</h1>
-                                <p className="mb-2">{post.description}</p>
+                            <div className="flex flex-col gap-y-4 px-6 py-4 h-full max-h-72">
+                                <h1 className="text-zinc-700 dark:text-amber-400 font-semibold text-xl ">{post.title}</h1>
+                                
+                                <p className="">{post.description}</p>
 
-                                <div className="flex flex-col laptop:flex-row text-xs gap-y-1 laptop:gap-y-0 tablet:text-base text-zinc-500 dark:text-zinc-400">
+                                <div className="h-full justify-end flex flex-col text-xs gap-y-1 tablet:text-base text-zinc-500 dark:text-zinc-400">
                                     <div className="flex items-center gap-x-2 mr-6 ">
                                         <BsFillPersonFill size={16} className="text-zinc-700 dark:text-amber-400" />
                                         <span>{props.username}</span>
                                     </div>
                                     <div className="flex items-center gap-x-2 mr-6 ">
                                         <BsCalendar3 size={16} className="text-zinc-700 dark:text-amber-400" />
-                                        <span className="">created at: {post.readable_publish_date}</span>
+                                        <span className="">{post.readable_publish_date}</span>
                                     </div>
                                     <div className="flex items-center gap-x-2">
                                         <BsClockFill size={16} className="text-zinc-700 dark:text-amber-400" />
-                                        <span>Reading time:  {post.reading_time_minutes} minutes</span>
+                                        <span>{post.reading_time_minutes} minutes</span>
                                     </div>
                                 </div>
                             </div>
