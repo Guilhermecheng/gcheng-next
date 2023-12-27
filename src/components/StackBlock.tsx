@@ -66,6 +66,10 @@ const completeStack: Dict = {
     styled_components: {
         name: "Styled Components",
         image: "/styled-components.svg",
+    },
+    astro: {
+        name: "Astro",
+        image: "/astro.svg"
     }
 }
 

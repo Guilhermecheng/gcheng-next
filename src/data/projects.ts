@@ -1,5 +1,29 @@
 export const projectsList = [
     {
+        title: "Deu vinho",
+        description: [
+            'Um catálogo de vinhos!',
+            'O site foi criado para ser um catálogo online para a Deu Vinho, para apresentar seu produtos, preços e detalhes sobre o mesmo. O usuário pode ver a lista completa dos produtos, e ao clicar em cada produto, podem encontrar informações detalhadas sobre cada um.',
+            'Site construído utilizando o framework Astro, em conjunto com Tailwind, React e Typescript.',
+        ],
+        descriptionEN:[
+            'A wine catalog!',
+            'The website was created to serve as an online catalog for Deu Vinho, showcasing its products, prices, and details about them. Users can view the complete list of products, and by clicking on each item, they can find detailed information about each one.',
+            'Website built with Astro framework, along with Tailwind, React and Typescript.',
+        ],
+        image: "/deuvinho-thumb.png",
+        imgAlt: "thumbnail do site Deu Vinho",
+        screen:"/deuvinho-screen.png",
+        screenAlt:"Screenshot do site Deu Vinho",
+        link: "https://deu-vinho-ibn9.vercel.app/",
+        stack: [
+            "astro",
+            "tailwind",
+            "react",
+            "typescript",
+        ]
+    },
+    {
         title: "CoinSynch",
         description: [
             'Uma plataforma crypto!',
