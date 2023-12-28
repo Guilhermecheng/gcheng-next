@@ -28,10 +28,8 @@ export function Layout({ children }: LayoutProps) {
                 menuButton={ { showMenuHideButton, setShowMenuHideButton } }
             />
 
-            <div className={`w-full px-4 pt-4 laptop:px-12 ${isMenuClosed ? "laptop:w-[90%] flex justify-center" : "laptop:w-[60%]"} laptop:h-screen laptop:absolute laptop:right-0 transition-all duration-150`}>
-                <div className={`w-full max-w-[900px] transition-all duration-75`}>
-                    {children}
-                </div>
+            <div className={`w-full px-4 pt-4 laptop:px-12 ${isMenuClosed ? "laptop:w-[90%]" : "laptop:w-[60%]"} laptop:h-screen laptop:absolute laptop:right-0 transition-all duration-150`}>
+                {children}
             </div>
         </div>
     )

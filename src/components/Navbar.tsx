@@ -8,7 +8,7 @@ import { gql } from "@apollo/client";
 
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
-import { FiMoon, FiSun } from "react-icons/fi";
+import { FiMoon, FiSun, FiChevronsLeft } from "react-icons/fi";
 
 import client from "@/services/apolloClient";
 import { GlobalContext } from "@/contexts/Contexts";
@@ -163,15 +163,17 @@ export function Navbar({ menuState, menuButton }: NavbarProps) {
                 </div>
             </div>
 
-            <div id="sidebar" className={`flex flex-col items-center bg-zinc-200 dark:bg-zinc-900 px-4 justify-center h-64 w-full laptop:fixed laptop:h-screen ${menuState.isMenuClosed ? "laptop:w-[10%]" : "laptop:w-[40%]"} transition-all duration-150`}>
+            <div id="sidebar" className={`relative flex flex-col items-center bg-zinc-200 dark:bg-zinc-900 px-4 justify-center h-64 w-full laptop:fixed laptop:h-screen ${menuState.isMenuClosed ? "laptop:w-[10%]" : "laptop:w-[40%]"} transition-all duration-150`}>
                 
 
                 <div id="mobile-menu" className="flex absolute right-4 top-4 z-40 laptop:hidden text-zinc-800 dark:text-amber-400">
                     { isMobileMenuOpen ? <IoMdClose size={40} onClick={() => setIsMobileMenuOpen(false)} /> : <HiMenuAlt1 size={40} onClick={() => setIsMobileMenuOpen(true)} /> }
                 </div>
 
-                <div className="text-black dark:text-white">
-                    <span onClick={() => menuState.setIsMenuClosed(!menuState.isMenuClosed)}>clique aqui</span>
+                <div className="absolute top-20">
+                    <span onClick={() => menuState.setIsMenuClosed(!menuState.isMenuClosed)}>
+                        <FiChevronsLeft size={32} className={`cursor-pointer text-black dark:text-amber-400 hover:text-amber-400 dark:hover:text-white ${menuState.isMenuClosed ? "rotate-180" : ""}`} />
+                    </span>
                 </div>
 
                 <Link href="/">
@@ -212,14 +214,19 @@ export function Navbar({ menuState, menuButton }: NavbarProps) {
                     </Switch.Thumb>
                 </Switch.Root>
 
-                <div id="language" className="absolute bottom-14 hidden laptop:block text-zinc-500 dark:text-zinc-100">
-                    <span>Language: <span>{ language === "ptBR" ? (
-                        <span className="cursor-pointer text-zinc-800 dark:text-amber-400 hover:underline hover:underline-offset-1" onClick={() => setLanguage("EN")}>BR</span>
-                    ) : (
-                        <span className="cursor-pointer text-zinc-800 dark:text-amber-400 hover:underline hover:underline-offset-1" onClick={() => setLanguage("ptBR")}>EN</span>
-                    ) }</span></span>
-                </div>
-                <PageFooter />
+                {!menuState.isMenuClosed && (
+                    <>
+                        <div id="language" className="absolute bottom-14 hidden laptop:block text-zinc-500 dark:text-zinc-100">
+                            <span>Language: <span>{ language === "ptBR" ? (
+                                <span className="cursor-pointer text-zinc-800 dark:text-amber-400 hover:underline hover:underline-offset-1" onClick={() => setLanguage("EN")}>BR</span>
+                            ) : (
+                                <span className="cursor-pointer text-zinc-800 dark:text-amber-400 hover:underline hover:underline-offset-1" onClick={() => setLanguage("ptBR")}>EN</span>
+                            ) }</span></span>
+                        </div>
+                        
+                        <PageFooter />
+                    </>
+                )}
             </div>
         </>
     )
