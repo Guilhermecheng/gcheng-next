@@ -26,7 +26,18 @@ interface PhraseProps {
  phrase: string;
 }
 
-export function Navbar() {
+interface NavbarProps {
+    menuState: {
+        isMenuClosed: boolean;
+        setIsMenuClosed: (value: boolean) => void;
+    };
+    menuButton: {
+        showMenuHideButton: boolean;
+        setShowMenuHideButton: (value: boolean) => void;
+    };
+}
+
+export function Navbar({ menuState, menuButton }: NavbarProps) {
     const { language, setLanguage, darkModeChecked, setDarkModeChecked } = useContext(GlobalContext);
     
     const [phrase, setPhrase] = useState<PhraseProps>();
@@ -152,27 +163,31 @@ export function Navbar() {
                 </div>
             </div>
 
-            <div id="sidebar" className='flex flex-col items-center bg-zinc-200 dark:bg-zinc-900 px-4 justify-center h-64 w-full laptop:fixed laptop:w-[40%] laptop:h-screen'>
+            <div id="sidebar" className={`flex flex-col items-center bg-zinc-200 dark:bg-zinc-900 px-4 justify-center h-64 w-full laptop:fixed laptop:h-screen ${menuState.isMenuClosed ? "laptop:w-[10%]" : "laptop:w-[40%]"} transition-all duration-150`}>
                 
 
                 <div id="mobile-menu" className="flex absolute right-4 top-4 z-40 laptop:hidden text-zinc-800 dark:text-amber-400">
                     { isMobileMenuOpen ? <IoMdClose size={40} onClick={() => setIsMobileMenuOpen(false)} /> : <HiMenuAlt1 size={40} onClick={() => setIsMobileMenuOpen(true)} /> }
                 </div>
 
+                <div className="text-black dark:text-white">
+                    <span onClick={() => menuState.setIsMenuClosed(!menuState.isMenuClosed)}>clique aqui</span>
+                </div>
+
                 <Link href="/">
                     <div className="flex flex-row items-center justify-center mt-6 laptop:mt-0">
-                        <div className='w-32 cursor-pointer'>
+                        <div className={`cursor-pointer ${menuState.isMenuClosed ? "w-16" : "w-32"} `}>
                             <img src="https://github.com/Guilhermecheng.png"  alt="Guilherme's GitHub profile picture" className='rounded-full object-center border-4 border-amber-400' />
                         </div>
 
-                        <div className='ml-4'>
+                        <div className={`ml-4 ${menuState.isMenuClosed ? "hidden" : "block"}`}>
                             <h1 className="text-zinc-800 dark:text-zinc-100 text-xl font-bold laptop:text-3xl">Guilherme Cheng</h1>
-                            <h3 className="text-zinc-500 dark:text-zinc-300 text-sm laptop:text-lg">front end dev, mechanical engineer </h3>
+                            <h3 className="text-zinc-500 dark:text-zinc-300 text-sm laptop:text-lg">front end dev, mechanical engineer</h3>
                         </div>
                     </div>
                 </Link>
 
-                <div id="inspirational-phrase" className="mt-6 pb-6 laptop:pb-0 laptop:mt-12 text-zinc-500 dark:text-zinc-300 relative">
+                <div id="inspirational-phrase" className={`mt-6 pb-6 laptop:pb-0 laptop:mt-12 text-zinc-500 dark:text-zinc-300 relative ${menuState.isMenuClosed && "hidden"}`}>
                     <p className="italic">
                         { phrase && phrase.phrase }
                     </p>
@@ -191,8 +206,8 @@ export function Navbar() {
                     }) }
                 </div>
 
-                <Switch.Root className="SwitchRoot hidden laptop:block fixed bottom-14 left-10" id="dark-mode" checked={darkModeChecked} onCheckedChange={ () => setDarkModeAtPage(darkModeChecked) }>
-                    <Switch.Thumb className="SwitchThumb flex items-center justify-center">
+                <Switch.Root className={`SwitchRoot fixed bottom-14 left-10 ${menuState.isMenuClosed ? "hidden" : "hidden laptop:block"}`} id="dark-mode" checked={darkModeChecked} onCheckedChange={ () => setDarkModeAtPage(darkModeChecked) }>
+                    <Switch.Thumb className={`SwitchThumb flex items-center justify-center`}>
                         { darkModeChecked ? <FiMoon size={12} className="text-zinc-500" /> : <FiSun size={12} className="text-zinc-500" /> }
                     </Switch.Thumb>
                 </Switch.Root>
