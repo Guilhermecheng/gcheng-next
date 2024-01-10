@@ -37,7 +37,7 @@ export default function AboutPage(props: any) {
             <Head>
                 <title>{ language === "ptBR" ? "Sobre": "About" } | Guilherme Cheng</title>
             </Head>
-            <div className=" text-base laptop:text-lg w-full flex flex-col laptop:h-screen">
+            <div className="text-base laptop:text-lg w-full flex flex-col laptop:h-screen">
                 <PageTitle 
                     title={pageContent.title}
                     subtitle={pageContent.subtitle}
